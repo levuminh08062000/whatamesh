@@ -90,7 +90,7 @@ export default function () {
               <h1 className="cursor-pointer text-3xl" onClick={resetColor}>
                 {idElement}
               </h1>
-              <button onClick={setToggle} className="text-sm">
+              <button onClick={setToggle} className="text-xs">
                 {toggle ? <IoPause /> : <IoPlay />}
               </button>
             </div>
