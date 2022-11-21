@@ -25,8 +25,6 @@ export default function () {
 
   const [toggle2, setToggle2] = useToggle(false);
 
-  const mouseWheel = useMouseWheel();
-
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
   });
@@ -55,7 +53,7 @@ export default function () {
       luminosity: "random",
       hue: "random",
     });
-  }, [mouseWheel]);
+  }, [useMouseWheel()]);
 
   useEffect(() => {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
