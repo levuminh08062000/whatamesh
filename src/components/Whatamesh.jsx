@@ -105,16 +105,18 @@ export default function () {
               >
                 {idElement}
               </h1>
-              <button onClick={setToggle1} className="text-sm">
-                {toggle1 ? <IoPause /> : <IoPlay />}
-              </button>
-              <button onClick={setToggle2} className="text-sm">
-                {!toggle2 ? (
-                  <AiOutlineFullscreen />
-                ) : (
-                  <AiOutlineFullscreenExit />
-                )}
-              </button>
+              <div className="flex flex-row items-baseline text-xs">
+                <button onClick={setToggle1}>
+                  {toggle1 ? <IoPause /> : <IoPlay />}
+                </button>
+                <button onClick={setToggle2}>
+                  {!toggle2 ? (
+                    <AiOutlineFullscreen />
+                  ) : (
+                    <AiOutlineFullscreenExit />
+                  )}
+                </button>
+              </div>
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-3.5">
               {/* https://github.com/davidmerfield/randomColor#options */}
