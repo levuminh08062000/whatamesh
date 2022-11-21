@@ -1,4 +1,4 @@
-import { Gradient } from "../library/Gradient";
+import { Gradient } from "whatamesh";
 import { useEffect, useState, useRef } from "react";
 import { randomColor } from "randomcolor";
 import clsx from "clsx";

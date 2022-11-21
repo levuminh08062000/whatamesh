@@ -194,7 +194,7 @@ class MiniGl {
                       name_no_prefix.charAt(0).toUpperCase() +
                       name_no_prefix.slice(1)),
                     `uniform struct ${name_no_prefix} 
-                                      {\n` +
+                                    {\n` +
                       Object.entries(uniform.value)
                         .map(([name, uniform]) =>
                           uniform
@@ -632,14 +632,14 @@ class Gradient {
               this.waitForCssVars());
           }));
     /*
-              this.scrollObserver = await s.create(.1, !1),
-              this.scrollObserver.observe(this.el),
-              this.scrollObserver.onSeparate(() => {
-                  window.removeEventListener("scroll", this.handleScroll), window.removeEventListener("mousedown", this.handleMouseDown), window.removeEventListener("mouseup", this.handleMouseUp), window.removeEventListener("keydown", this.handleKeyDown), this.isIntersecting = !1, this.conf.playing && this.pause()
-              }), 
-              this.scrollObserver.onIntersect(() => {
-                  window.addEventListener("scroll", this.handleScroll), window.addEventListener("mousedown", this.handleMouseDown), window.addEventListener("mouseup", this.handleMouseUp), window.addEventListener("keydown", this.handleKeyDown), this.isIntersecting = !0, this.addIsLoadedClass(), this.play()
-              })*/
+            this.scrollObserver = await s.create(.1, !1),
+            this.scrollObserver.observe(this.el),
+            this.scrollObserver.onSeparate(() => {
+                window.removeEventListener("scroll", this.handleScroll), window.removeEventListener("mousedown", this.handleMouseDown), window.removeEventListener("mouseup", this.handleMouseUp), window.removeEventListener("keydown", this.handleKeyDown), this.isIntersecting = !1, this.conf.playing && this.pause()
+            }), 
+            this.scrollObserver.onIntersect(() => {
+                window.addEventListener("scroll", this.handleScroll), window.addEventListener("mousedown", this.handleMouseDown), window.addEventListener("mouseup", this.handleMouseUp), window.addEventListener("keydown", this.handleKeyDown), this.isIntersecting = !0, this.addIsLoadedClass(), this.play()
+            })*/
   }
   disconnect() {
     this.scrollObserver &&
