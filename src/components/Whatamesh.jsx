@@ -157,7 +157,7 @@ export default function () {
           </div>
           <div className="flex w-full flex-col items-end self-end">
             <a
-              className="animate-pulse text-lg"
+              className="text-lg"
               href="https://github.com/shenlong616/whatamesh"
               target="_blank"
             >
