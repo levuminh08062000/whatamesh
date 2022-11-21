@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![](./README/images/screenshots/8.png)
+![](./README/images/screenshots/1.png)
 
 ## To do
 
@@ -20,7 +20,7 @@
 📂README
  ┗ 📂images
  ┃ ┗ 📂screenshots
- ┃ ┃ ┗ 8.png
+ ┃ ┃ ┗ 1.png
 
  📂src
  ┣ 📂components
