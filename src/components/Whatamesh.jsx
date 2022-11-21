@@ -2,7 +2,7 @@ import { Gradient } from "../library/Gradient";
 import { useEffect, useState, useRef } from "react";
 import { randomColor } from "randomcolor";
 import clsx from "clsx";
-import { useIdle, useToggle, useFullscreen, useMouseWheel } from "react-use";
+import { useIdle, useToggle, useFullscreen } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
@@ -48,12 +48,12 @@ export default function () {
     refInitGradient();
   }, []);
 
-  useEffect(() => {
-    setRandomColorGradient({
-      luminosity: "random",
-      hue: "random",
-    });
-  }, [useMouseWheel()]);
+  // useEffect(() => {
+  //   setRandomColorGradient({
+  //     luminosity: "random",
+  //     hue: "random",
+  //   });
+  // }, [useMouseWheel()]);
 
   useEffect(() => {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
