@@ -24,7 +24,7 @@ export default function () {
     ref.current.initGradient(`#${idElement}`);
   }
 
-  function functionn(parameter) {
+  function setRandomColorGradient(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     refInitGradient();
     toggle(true);
@@ -33,11 +33,13 @@ export default function () {
   function functionnn(parameter) {
     return (
       <div className="flex flex-row items-baseline">
-        <button onClick={() => functionn({ hue: parameter })}>
+        <button onClick={() => setRandomColorGradient({ hue: parameter })}>
           {parameter}
         </button>
         <button
-          onClick={() => functionn({ hue: parameter, luminosity: "dark" })}
+          onClick={() =>
+            setRandomColorGradient({ hue: parameter, luminosity: "dark" })
+          }
         >
           Dark
         </button>
@@ -98,18 +100,27 @@ export default function () {
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button
                 onClick={() =>
-                  functionn({ luminosity: "random", hue: "random" })
+                  setRandomColorGradient({
+                    luminosity: "random",
+                    hue: "random",
+                  })
                 }
               >
                 random
               </button>
-              <button onClick={() => functionn({ luminosity: "bright" })}>
+              <button
+                onClick={() => setRandomColorGradient({ luminosity: "bright" })}
+              >
                 bright
               </button>
-              <button onClick={() => functionn({ luminosity: "light" })}>
+              <button
+                onClick={() => setRandomColorGradient({ luminosity: "light" })}
+              >
                 light
               </button>
-              <button onClick={() => functionn({ luminosity: "dark" })}>
+              <button
+                onClick={() => setRandomColorGradient({ luminosity: "dark" })}
+              >
                 dark
               </button>
               {functionnn("red")}
