@@ -7,6 +7,7 @@ export default function () {
     <HelmetProvider>
       <Helmet>
         <title>Whatamesh</title>
+        <meta name="description" content="Whatamesh" />
       </Helmet>
       <Whatamesh />
     </HelmetProvider>
