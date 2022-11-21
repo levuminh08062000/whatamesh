@@ -3,8 +3,8 @@
 ## Screenshots
 
 ![](./README/images/screenshots/1.png)
-![](./README/images/screenshots/2.png)
-![](./README/images/screenshots/3.png)
+![](./README/images/screenshots/8.png)
+![](./README/images/screenshots/9.png)
 
 ## To do
 
@@ -23,8 +23,8 @@
  ┗ 📂images
  ┃ ┗ 📂screenshots
  ┃ ┃ ┣ 1.png
- ┃ ┃ ┣ 2.png
- ┃ ┃ ┗ 3.png
+ ┃ ┃ ┣ 8.png
+ ┃ ┃ ┗ 9.png
 
  📂src
  ┣ 📂components
