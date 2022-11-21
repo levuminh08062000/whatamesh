@@ -128,7 +128,7 @@ export default function () {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-1 pl-3.5">
+            <div className="flex flex-col items-start gap-y-1 pl-5">
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button
                 onClick={() =>
