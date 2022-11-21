@@ -143,12 +143,12 @@ export default function () {
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
               <h1
-                className="cursor-pointer font-serif text-5xl"
+                className="cursor-pointer font-serif text-7xl"
                 onClick={defaultColorFn}
               >
                 {idElement}
               </h1>
-              <div className="flex flex-row items-baseline text-xs">
+              <div className="flex flex-row items-baseline text-sm">
                 <button onClick={setToggle1} title={toggle1 ? "Pause" : "Play"}>
                   {toggle1 ? <IoPause /> : <IoPlay />}
                 </button>
@@ -164,7 +164,7 @@ export default function () {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-1 pl-6">
+            <div className="flex flex-col items-start gap-y-1 pl-6 text-2xl">
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button onClick={rColor}>random</button>
               <button onClick={bColor}>bright</button>
