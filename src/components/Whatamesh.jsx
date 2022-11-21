@@ -2,7 +2,7 @@ import { Gradient } from "../library/Gradient";
 import { useEffect, useState, useRef } from "react";
 import { randomColor } from "randomcolor";
 import clsx from "clsx";
-import { useIdle, useToggle, useFullscreen } from "react-use";
+import { useIdle, useToggle, useFullscreen, useKey } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
@@ -24,6 +24,16 @@ export default function () {
   const [toggle1, setToggle1] = useToggle(true);
 
   const [toggle2, setToggle2] = useToggle(false);
+
+  // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
+
+  useKey("p", setToggle1);
+
+  useKey("Enter", setToggle1);
+
+  useKey(" ", setToggle1);
+
+  useKey("f", setToggle2);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),

@@ -10,6 +10,7 @@
 
 - [ ] Add other settings [`ref1.current`](src/components/Whatamesh.jsx#L16)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
+- [x] Keyboard shortcut
 
 ## Bugs
 
