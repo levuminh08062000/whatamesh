@@ -9,7 +9,7 @@
 ## To do
 
 - [ ] Settings page `ref.current`
-- [ ] Splitting code :v
+- [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 
 ## Bugs
 
