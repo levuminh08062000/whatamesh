@@ -18,11 +18,11 @@ export default function () {
 
   const isIdle = useIdle(3e3);
 
-  const [boolean, toggle] = useToggle(true);
+  const [toggle, setToggle] = useToggle(true);
 
   function refInitGradient() {
     ref.current.initGradient(`#${idElement}`);
-    toggle(true);
+    setToggle(true);
   }
 
   function setRandomColor(parameter) {
@@ -40,8 +40,8 @@ export default function () {
   }, []);
 
   useEffect(() => {
-    boolean ? ref.current.play() : ref.current.pause();
-  }, [boolean]);
+    toggle ? ref.current.play() : ref.current.pause();
+  }, [toggle]);
 
   function function1(parameter) {
     return (
@@ -90,8 +90,8 @@ export default function () {
               <h1 className="cursor-pointer text-3xl" onClick={resetColor}>
                 {idElement}
               </h1>
-              <button onClick={toggle} className="text-sm">
-                {boolean ? <IoPause /> : <IoPlay />}
+              <button onClick={setToggle} className="text-sm">
+                {toggle ? <IoPause /> : <IoPlay />}
               </button>
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-3.5">
