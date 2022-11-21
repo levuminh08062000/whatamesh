@@ -113,10 +113,13 @@ export default function () {
                 {idElement}
               </h1>
               <div className="flex flex-row items-baseline text-xs">
-                <button onClick={setToggle1}>
+                <button onClick={setToggle1} title={toggle1 ? "Pause" : "Play"}>
                   {toggle1 ? <IoPause /> : <IoPlay />}
                 </button>
-                <button onClick={setToggle2}>
+                <button
+                  onClick={setToggle2}
+                  title={!toggle2 ? "Fullscreen" : "Fullscreen Exit"}
+                >
                   {!toggle2 ? (
                     <AiOutlineFullscreen />
                   ) : (
