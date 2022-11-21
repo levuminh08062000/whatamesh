@@ -165,7 +165,7 @@ export default function () {
               {function1("monochrome")}
             </div>
           </div>
-          <div className="flex w-full flex-col items-end self-end">
+          <div className="flex w-full flex-row justify-end self-end">
             <a
               className="text-lg"
               href="https://github.com/shenlong616/whatamesh"
