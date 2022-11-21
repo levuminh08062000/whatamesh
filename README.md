@@ -8,7 +8,7 @@
 
 ## To do
 
-- [ ] Settings page `ref.current`
+- [ ] Add other settings `ref.current`
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 
 ## Bugs
