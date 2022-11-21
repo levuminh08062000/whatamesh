@@ -23,6 +23,7 @@ export default function () {
   function functionn(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     ref.current.initGradient(`#${idElement}`);
+    toggle(true);
   }
 
   function functionnn(parameter) {
