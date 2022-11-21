@@ -25,29 +25,12 @@ export default function () {
     toggle(true);
   }
 
-  function setRandomColorGradient(parameter) {
+  function setRandomColor(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     refInitGradient();
   }
 
-  function functionnn(parameter) {
-    return (
-      <div className="flex flex-row items-baseline">
-        <button onClick={() => setRandomColorGradient({ hue: parameter })}>
-          {parameter}
-        </button>
-        <button
-          onClick={() =>
-            setRandomColorGradient({ hue: parameter, luminosity: "dark" })
-          }
-        >
-          Dark
-        </button>
-      </div>
-    );
-  }
-
-  function resetColorGradient() {
+  function resetColor() {
     setState(defaultColor);
     refInitGradient();
   }
@@ -59,6 +42,21 @@ export default function () {
   useEffect(() => {
     boolean ? ref.current.play() : ref.current.pause();
   }, [boolean]);
+
+  function function1(parameter) {
+    return (
+      <div className="flex flex-row items-baseline">
+        <button onClick={() => setRandomColor({ hue: parameter })}>
+          {parameter}
+        </button>
+        <button
+          onClick={() => setRandomColor({ hue: parameter, luminosity: "dark" })}
+        >
+          Dark
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -89,10 +87,7 @@ export default function () {
         <div className="fex-col flex h-screen w-screen p-5">
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
-              <h1
-                className="cursor-pointer text-3xl"
-                onClick={resetColorGradient}
-              >
+              <h1 className="cursor-pointer text-3xl" onClick={resetColor}>
                 {idElement}
               </h1>
               <button onClick={toggle} className="text-sm">
@@ -103,7 +98,7 @@ export default function () {
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button
                 onClick={() =>
-                  setRandomColorGradient({
+                  setRandomColor({
                     luminosity: "random",
                     hue: "random",
                   })
@@ -111,29 +106,23 @@ export default function () {
               >
                 random
               </button>
-              <button
-                onClick={() => setRandomColorGradient({ luminosity: "bright" })}
-              >
+              <button onClick={() => setRandomColor({ luminosity: "bright" })}>
                 bright
               </button>
-              <button
-                onClick={() => setRandomColorGradient({ luminosity: "light" })}
-              >
+              <button onClick={() => setRandomColor({ luminosity: "light" })}>
                 light
               </button>
-              <button
-                onClick={() => setRandomColorGradient({ luminosity: "dark" })}
-              >
+              <button onClick={() => setRandomColor({ luminosity: "dark" })}>
                 dark
               </button>
-              {functionnn("red")}
-              {functionnn("orange")}
-              {functionnn("yellow")}
-              {functionnn("green")}
-              {functionnn("blue")}
-              {functionnn("purple")}
-              {functionnn("pink")}
-              {functionnn("monochrome")}
+              {function1("red")}
+              {function1("orange")}
+              {function1("yellow")}
+              {function1("green")}
+              {function1("blue")}
+              {function1("purple")}
+              {function1("pink")}
+              {function1("monochrome")}
             </div>
           </div>
           <div className="flex w-full flex-col items-end self-end">
