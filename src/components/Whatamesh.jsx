@@ -118,7 +118,7 @@ export default function () {
                 </button>
                 <button
                   onClick={setToggle2}
-                  title={!toggle2 ? "Fullscreen" : "Fullscreen Exit"}
+                  title={!toggle2 ? "Fullscreen" : "Fullscreen exit"}
                 >
                   {!toggle2 ? (
                     <AiOutlineFullscreen />
