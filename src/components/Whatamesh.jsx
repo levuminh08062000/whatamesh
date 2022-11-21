@@ -18,11 +18,11 @@ export default function () {
 
   const isIdle = useIdle(3e3);
 
-  const [toggle, setToggle] = useToggle(true);
+  const [toggle1, setToggle1] = useToggle(true);
 
   function refInitGradient() {
     ref1.current.initGradient(`#${idElement}`);
-    setToggle(true); // ??
+    setToggle1(true); // ??
   }
 
   function setRandomColorGradient(parameter) {
@@ -40,8 +40,8 @@ export default function () {
   }, []);
 
   useEffect(() => {
-    toggle ? ref1.current.play() : ref1.current.pause(); // ??
-  }, [toggle]);
+    toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
+  }, [toggle1]);
 
   function function1(parameter) {
     return (
@@ -95,8 +95,8 @@ export default function () {
               >
                 {idElement}
               </h1>
-              <button onClick={setToggle} className="text-xs">
-                {toggle ? <IoPause /> : <IoPlay />}
+              <button onClick={setToggle1} className="text-xs">
+                {toggle1 ? <IoPause /> : <IoPlay />}
               </button>
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-3.5">
