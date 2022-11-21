@@ -20,9 +20,13 @@ export default function () {
 
   const [boolean, toggle] = useToggle(true);
 
+  function refInitGradient() {
+    ref.current.initGradient(`#${idElement}`);
+  }
+
   function functionn(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
-    ref.current.initGradient(`#${idElement}`);
+    refInitGradient();
     toggle(true);
   }
 
@@ -43,11 +47,11 @@ export default function () {
 
   function functionnnn() {
     setState(defaultColor);
-    ref.current.initGradient(`#${idElement}`);
+    refInitGradient();
   }
 
   useEffect(() => {
-    ref.current.initGradient(`#${idElement}`);
+    refInitGradient();
   }, []);
 
   useEffect(() => {
