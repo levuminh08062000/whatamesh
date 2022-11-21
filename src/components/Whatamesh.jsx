@@ -2,7 +2,7 @@ import { Gradient } from "../library/Gradient";
 import { useEffect, useState, useRef } from "react";
 import { randomColor } from "randomcolor";
 import clsx from "clsx";
-import { useIdle, useToggle, useFullscreen } from "react-use";
+import { useIdle, useToggle, useFullscreen, useMouseWheel } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
@@ -24,6 +24,8 @@ export default function () {
   const [toggle1, setToggle1] = useToggle(true);
 
   const [toggle2, setToggle2] = useToggle(false);
+
+  const mouseWheel = useMouseWheel();
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
@@ -47,6 +49,13 @@ export default function () {
   useEffect(() => {
     refInitGradient();
   }, []);
+
+  useEffect(() => {
+    setRandomColorGradient({
+      luminosity: "random",
+      hue: "random",
+    });
+  }, [mouseWheel]);
 
   useEffect(() => {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
