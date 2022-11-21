@@ -180,12 +180,8 @@ export default function () {
               {function1("monochrome")} */}
             </div>
           </div>
-          <div className="flex w-full flex-row justify-end self-end">
-            <a
-              className="text-lg"
-              href="https://github.com/shenlong616/whatamesh"
-              target="_blank"
-            >
+          <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
+            <a href="https://github.com/shenlong616/whatamesh" target="_blank">
               <GoMarkGithub />
             </a>
           </div>
