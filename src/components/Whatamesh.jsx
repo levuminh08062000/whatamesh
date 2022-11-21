@@ -25,12 +25,12 @@ export default function () {
     setToggle(true);
   }
 
-  function setRandomColor(parameter) {
+  function setRandomColorGradient(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     refInitGradient();
   }
 
-  function resetColor() {
+  function resetColorGradient() {
     setState(defaultColor);
     refInitGradient();
   }
@@ -46,11 +46,13 @@ export default function () {
   function function1(parameter) {
     return (
       <div className="flex flex-row items-baseline">
-        <button onClick={() => setRandomColor({ hue: parameter })}>
+        <button onClick={() => setRandomColorGradient({ hue: parameter })}>
           {parameter}
         </button>
         <button
-          onClick={() => setRandomColor({ hue: parameter, luminosity: "dark" })}
+          onClick={() =>
+            setRandomColorGradient({ hue: parameter, luminosity: "dark" })
+          }
         >
           Dark
         </button>
@@ -87,7 +89,10 @@ export default function () {
         <div className="fex-col flex h-screen w-screen p-5">
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
-              <h1 className="cursor-pointer text-3xl" onClick={resetColor}>
+              <h1
+                className="cursor-pointer text-3xl"
+                onClick={resetColorGradient}
+              >
                 {idElement}
               </h1>
               <button onClick={setToggle} className="text-xs">
@@ -98,7 +103,7 @@ export default function () {
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button
                 onClick={() =>
-                  setRandomColor({
+                  setRandomColorGradient({
                     luminosity: "random",
                     hue: "random",
                   })
@@ -106,13 +111,19 @@ export default function () {
               >
                 random
               </button>
-              <button onClick={() => setRandomColor({ luminosity: "bright" })}>
+              <button
+                onClick={() => setRandomColorGradient({ luminosity: "bright" })}
+              >
                 bright
               </button>
-              <button onClick={() => setRandomColor({ luminosity: "light" })}>
+              <button
+                onClick={() => setRandomColorGradient({ luminosity: "light" })}
+              >
                 light
               </button>
-              <button onClick={() => setRandomColor({ luminosity: "dark" })}>
+              <button
+                onClick={() => setRandomColorGradient({ luminosity: "dark" })}
+              >
                 dark
               </button>
               {function1("red")}
