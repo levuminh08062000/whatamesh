@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![](./README/images/screenshots/4.png)
+![](./README/images/screenshots/1.png)
 ![](./README/images/screenshots/2.png)
 ![](./README/images/screenshots/3.png)
 
@@ -22,9 +22,9 @@
 📂README
  ┗ 📂images
  ┃ ┗ 📂screenshots
+ ┃ ┃ ┣ 1.png
  ┃ ┃ ┣ 2.png
- ┃ ┃ ┣ 3.png
- ┃ ┃ ┗ 4.png
+ ┃ ┃ ┗ 3.png
 
  📂src
  ┣ 📂components
