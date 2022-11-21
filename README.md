@@ -15,4 +15,39 @@
 
 - [ ] [unknown](/src/components/Whatamesh.jsx#L120)
 
+## Tree files
+
+```text
+📂README
+ ┗ 📂images
+ ┃ ┗ 📂screenshots
+ ┃ ┃ ┣ 1.png
+ ┃ ┃ ┣ 2.png
+ ┃ ┃ ┗ 3.png
+
+ 📂src
+ ┣ 📂components
+ ┃ ┗ Whatamesh.jsx
+ ┣ 📂library
+ ┃ ┗ Gradient.js
+ ┣ App.jsx
+ ┣ App.scss
+ ┣ main.jsx
+ ┗ _tailwindcss.scss
+```
+
+## Development
+
+```text
+ _______________
+/ $ mpm i       \
+\ $ npm run dev /
+ ---------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
+
 Inspired by [`@jordienr`](https://github.com/jordienr/whatamesh)
