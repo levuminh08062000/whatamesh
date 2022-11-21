@@ -25,16 +25,6 @@ export default function () {
 
   const [toggle2, setToggle2] = useToggle(false);
 
-  // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
-
-  useKey("p", setToggle1);
-
-  useKey("Enter", setToggle1);
-
-  useKey(" ", setToggle1);
-
-  useKey("f", setToggle2);
-
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
   });
@@ -70,6 +60,17 @@ export default function () {
   //     </div>
   //   );
   // }
+
+  // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
+  useKey("p", setToggle1);
+  useKey(" ", setToggle1);
+  useKey("f", setToggle2);
+  useKey("Enter", () => {
+    setRandomColorGradient({
+      luminosity: "random",
+      hue: "random",
+    });
+  });
 
   useEffect(() => {
     refInitGradient();
