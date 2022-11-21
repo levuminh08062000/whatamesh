@@ -39,11 +39,6 @@ export default function () {
     refInitGradient();
   }
 
-  function resetColorGradient() {
-    setState(defaultColor);
-    refInitGradient();
-  }
-
   // function function1(parameter) {
   //   return (
   //     <div className="flex flex-row items-baseline">
@@ -61,16 +56,46 @@ export default function () {
   //   );
   // }
 
-  // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
-  useKey("p", setToggle1);
-  useKey(" ", setToggle1);
-  useKey("f", setToggle2);
-  useKey("Enter", () => {
+  function defaultColorFn() {
+    setState(defaultColor);
+    refInitGradient();
+  }
+
+  function rColor() {
     setRandomColorGradient({
       luminosity: "random",
       hue: "random",
     });
-  });
+  }
+
+  function bColor() {
+    setRandomColorGradient({ luminosity: "bright" });
+  }
+
+  function lColor() {
+    setRandomColorGradient({ luminosity: "light" });
+  }
+
+  function dColor() {
+    setRandomColorGradient({ luminosity: "dark" });
+  }
+
+  // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
+  useKey("p", setToggle1);
+  useKey(" ", setToggle1);
+
+  useKey("f", setToggle2);
+  useKey("Enter", setToggle2);
+
+  useKey("Escape", defaultColorFn);
+
+  useKey("r", rColor);
+
+  useKey("b", bColor);
+
+  useKey("l", lColor);
+
+  useKey("d", dColor);
 
   useEffect(() => {
     refInitGradient();
@@ -119,7 +144,7 @@ export default function () {
             <div className="flex flex-row items-baseline gap-x-1">
               <h1
                 className="cursor-pointer font-serif text-5xl"
-                onClick={resetColorGradient}
+                onClick={defaultColorFn}
               >
                 {idElement}
               </h1>
@@ -141,31 +166,10 @@ export default function () {
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-6">
               {/* https://github.com/davidmerfield/randomColor#options */}
-              <button
-                onClick={() =>
-                  setRandomColorGradient({
-                    luminosity: "random",
-                    hue: "random",
-                  })
-                }
-              >
-                random
-              </button>
-              <button
-                onClick={() => setRandomColorGradient({ luminosity: "bright" })}
-              >
-                bright
-              </button>
-              <button
-                onClick={() => setRandomColorGradient({ luminosity: "light" })}
-              >
-                light
-              </button>
-              <button
-                onClick={() => setRandomColorGradient({ luminosity: "dark" })}
-              >
-                dark
-              </button>
+              <button onClick={rColor}>random</button>
+              <button onClick={bColor}>bright</button>
+              <button onClick={lColor}>light</button>
+              <button onClick={dColor}>dark</button>
               {/* {function1("red")}
               {function1("orange")}
               {function1("yellow")}
