@@ -8,12 +8,12 @@
 
 ## To do
 
-- [ ] Add other settings `ref.current`
+- [ ] Add other settings [`ref1.current`](src/components/Whatamesh.jsx#L16)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 
 ## Bugs
 
-- [ ] [unknown](/src/components/Whatamesh.jsx#L173)
+- [ ] [unknown](/src/components/Whatamesh.jsx#L174)
 
 ## Tree files
 
