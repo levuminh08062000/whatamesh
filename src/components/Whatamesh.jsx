@@ -10,7 +10,7 @@ import { GoMarkGithub } from "react-icons/go";
 export default function () {
   const idElement = "Whatamesh";
 
-  const ref = useRef(new Gradient());
+  const ref1 = useRef(new Gradient());
 
   const defaultColor = ["#000000", "#111111", "#222222", "#333333"];
 
@@ -21,7 +21,7 @@ export default function () {
   const [toggle, setToggle] = useToggle(true);
 
   function refInitGradient() {
-    ref.current.initGradient(`#${idElement}`);
+    ref1.current.initGradient(`#${idElement}`);
     setToggle(true); // ??
   }
 
@@ -40,7 +40,7 @@ export default function () {
   }, []);
 
   useEffect(() => {
-    toggle ? ref.current.play() : ref.current.pause(); // ??
+    toggle ? ref1.current.play() : ref1.current.pause(); // ??
   }, [toggle]);
 
   function function1(parameter) {
