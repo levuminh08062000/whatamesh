@@ -22,7 +22,7 @@ export default function () {
 
   function refInitGradient() {
     ref.current.initGradient(`#${idElement}`);
-    setToggle(true);
+    setToggle(true); // ??
   }
 
   function setRandomColorGradient(parameter) {
@@ -40,7 +40,7 @@ export default function () {
   }, []);
 
   useEffect(() => {
-    toggle ? ref.current.play() : ref.current.pause();
+    toggle ? ref.current.play() : ref.current.pause(); // ??
   }, [toggle]);
 
   function function1(parameter) {
