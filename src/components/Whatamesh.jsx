@@ -107,7 +107,7 @@ export default function () {
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
               <h1
-                className="cursor-pointer text-3xl"
+                className="cursor-pointer text-5xl"
                 onClick={resetColorGradient}
               >
                 {idElement}
