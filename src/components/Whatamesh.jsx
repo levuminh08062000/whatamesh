@@ -107,7 +107,7 @@ export default function () {
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
               <h1
-                className="cursor-pointer text-5xl"
+                className="cursor-pointer font-serif text-5xl"
                 onClick={resetColorGradient}
               >
                 {idElement}
@@ -128,7 +128,7 @@ export default function () {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-1 pl-5">
+            <div className="flex flex-col items-start gap-y-1 pl-6">
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button
                 onClick={() =>
