@@ -2,15 +2,18 @@ import { Gradient } from "../library/Gradient";
 import { useEffect, useState, useRef } from "react";
 import { randomColor } from "randomcolor";
 import clsx from "clsx";
-import { useIdle, useToggle } from "react-use";
+import { useIdle, useToggle, useFullscreen } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
+import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
 
 export default function () {
   const idElement = "Whatamesh";
 
   const ref1 = useRef(new Gradient());
+
+  const ref2 = useRef(null);
 
   const defaultColor = ["#000000", "#111111", "#222222", "#333333"];
 
@@ -19,6 +22,12 @@ export default function () {
   const isIdle = useIdle(3e3);
 
   const [toggle1, setToggle1] = useToggle(true);
+
+  const [toggle2, setToggle2] = useToggle(false);
+
+  useFullscreen(ref2, toggle2, {
+    onClose: () => setToggle2(false),
+  });
 
   function refInitGradient() {
     ref1.current.initGradient(`#${idElement}`);
@@ -65,6 +74,7 @@ export default function () {
       className={clsx("flex flex-col", {
         "cursor-none": isIdle,
       })}
+      ref={ref2}
     >
       <canvas
         id={idElement}
@@ -95,8 +105,15 @@ export default function () {
               >
                 {idElement}
               </h1>
-              <button onClick={setToggle1} className="text-xs">
+              <button onClick={setToggle1} className="text-sm">
                 {toggle1 ? <IoPause /> : <IoPlay />}
+              </button>
+              <button onClick={setToggle2} className="text-sm">
+                {!toggle2 ? (
+                  <AiOutlineFullscreen />
+                ) : (
+                  <AiOutlineFullscreenExit />
+                )}
               </button>
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-3.5">
