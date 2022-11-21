@@ -22,12 +22,12 @@ export default function () {
 
   function refInitGradient() {
     ref.current.initGradient(`#${idElement}`);
+    toggle(true);
   }
 
   function setRandomColorGradient(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     refInitGradient();
-    toggle(true);
   }
 
   function functionnn(parameter) {
@@ -47,7 +47,7 @@ export default function () {
     );
   }
 
-  function functionnnn() {
+  function resetColorGradient() {
     setState(defaultColor);
     refInitGradient();
   }
@@ -89,7 +89,10 @@ export default function () {
         <div className="fex-col flex h-screen w-screen p-5">
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
-              <h1 className="cursor-pointer text-3xl" onClick={functionnnn}>
+              <h1
+                className="cursor-pointer text-3xl"
+                onClick={resetColorGradient}
+              >
                 {idElement}
               </h1>
               <button onClick={toggle} className="text-sm">
