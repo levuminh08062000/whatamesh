@@ -143,7 +143,7 @@ export default function () {
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
               <h1
-                className="cursor-pointer font-serif text-5xl sm:text-7xl"
+                className="cursor-pointer font-serif text-5xl sm:first-letter:text-8xl"
                 onClick={defaultColorFn}
               >
                 {idElement}
@@ -164,7 +164,7 @@ export default function () {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-1 pl-4 text-xl sm:pl-6 sm:text-2xl">
+            <div className="flex flex-col items-start gap-y-1 pl-4 text-xl sm:pl-11 sm:text-2xl">
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button onClick={rColor}>random</button>
               <button onClick={bColor}>bright</button>
