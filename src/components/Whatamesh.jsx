@@ -11,11 +11,11 @@ import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
 export default function () {
   const idElement = "Whatamesh";
 
+  const defaultColor = ["#000000", "#111111", "#222222", "#333333"];
+
   const ref1 = useRef(new Gradient());
 
   const ref2 = useRef(null);
-
-  const defaultColor = ["#000000", "#111111", "#222222", "#333333"];
 
   const [state, setState] = useState(defaultColor);
 
