@@ -7,7 +7,7 @@ import { useIdle, useToggle, useFullscreen, useKey } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
-import { FiMaximize2, FiMinimize2 } from "react-icons/fi";
+import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
 import {
   MdFlashlightOff,
   MdFlashlightOn,
@@ -158,7 +158,11 @@ export default function () {
                   onClick={setToggle2}
                   title={!toggle2 ? "fullscreen" : "fullscreen exit"}
                 >
-                  {!toggle2 ? <FiMaximize2 /> : <FiMinimize2 />}
+                  {!toggle2 ? (
+                    <AiOutlineFullscreen />
+                  ) : (
+                    <AiOutlineFullscreenExit />
+                  )}
                 </button>
                 <button onClick={darkenTopGradient} title="toggle darken top">
                   {!toggle3 ? <MdFlashlightOn /> : <MdFlashlightOff />}
