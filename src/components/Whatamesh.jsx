@@ -7,6 +7,7 @@ import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
+import { MdFormatColorReset } from "react-icons/md";
 
 export default function () {
   const idElement = "Whatamesh";
@@ -142,19 +143,22 @@ export default function () {
         <div className="fex-col flex h-screen w-screen p-7 md:p-10">
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
-              <h1
-                className="cursor-pointer font-serif text-5xl sm:first-letter:text-8xl"
-                onClick={defaultColorFn}
-              >
+              <h1 className="font-serif text-5xl sm:first-letter:text-8xl">
                 {idElement}
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
-                <button onClick={setToggle1} title={toggle1 ? "Pause" : "Play"}>
+                {/* https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript */}
+                {JSON.stringify(state) !== JSON.stringify(defaultColor) ? (
+                  <button onClick={defaultColorFn} title="color reset">
+                    <MdFormatColorReset />
+                  </button>
+                ) : undefined}
+                <button onClick={setToggle1} title={toggle1 ? "pause" : "play"}>
                   {toggle1 ? <IoPause /> : <IoPlay />}
                 </button>
                 <button
                   onClick={setToggle2}
-                  title={!toggle2 ? "Fullscreen" : "Fullscreen exit"}
+                  title={!toggle2 ? "fullscreen" : "fullscreen exit"}
                 >
                   {!toggle2 ? (
                     <AiOutlineFullscreen />
