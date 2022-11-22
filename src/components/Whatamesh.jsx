@@ -8,8 +8,11 @@ import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
-import { MdFormatColorReset } from "react-icons/md";
-import { MdFlashlightOff, MdFlashlightOn } from "react-icons/md";
+import {
+  MdFlashlightOff,
+  MdFlashlightOn,
+  MdFormatColorReset,
+} from "react-icons/md";
 
 export default function () {
   const idElement = "Whatamesh";
