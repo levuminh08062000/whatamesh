@@ -80,9 +80,8 @@ export default function () {
   useKey("p", setToggle1);
   useKey(" ", setToggle1);
   useKey("f", setToggle2);
-  useKey("Enter", setToggle2);
+  useKey("Enter", darkenTopGradient);
   useKey("Escape", defaultColorFn);
-  useKey("t", darkenTopGradient);
   useKey("r", rColor);
   useKey("b", bColor);
   useKey("l", lColor);
