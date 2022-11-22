@@ -49,6 +49,11 @@ export default function () {
     refInitGradient();
   }
 
+  function darkenTopGradient() {
+    setToggle3();
+    refInitGradient();
+  }
+
   function rColor() {
     setRandomColorGradient({
       luminosity: "random",
@@ -71,18 +76,13 @@ export default function () {
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
   useKey("p", setToggle1);
   useKey(" ", setToggle1);
-
   useKey("f", setToggle2);
   useKey("Enter", setToggle2);
-
   useKey("Escape", defaultColorFn);
-
+  useKey("t", darkenTopGradient);
   useKey("r", rColor);
-
   useKey("b", bColor);
-
   useKey("l", lColor);
-
   useKey("d", dColor);
 
   useEffect(() => {
@@ -161,13 +161,7 @@ export default function () {
                     <AiOutlineFullscreenExit />
                   )}
                 </button>
-                <button
-                  onClick={() => {
-                    setToggle3();
-                    refInitGradient();
-                  }}
-                  title="toggle darken top"
-                >
+                <button onClick={darkenTopGradient} title="toggle darken top">
                   {!toggle3 ? <MdFlashlightOn /> : <MdFlashlightOff />}
                 </button>
               </div>
