@@ -180,7 +180,7 @@ export default function () {
                   }}
                   title="toggle darken top"
                 >
-                  {toggle3 ? <MdFlashlightOn /> : <MdFlashlightOff />}
+                  {!toggle3 ? <MdFlashlightOn /> : <MdFlashlightOff />}
                 </button>
               </div>
             </div>
