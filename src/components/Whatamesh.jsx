@@ -137,12 +137,14 @@ export default function () {
                 {idElement}
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
-                {/* https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript */}
-                {JSON.stringify(state) !== JSON.stringify(defaultColor) ? (
-                  <button onClick={defaultColorFn} title="color reset">
-                    <MdFormatColorReset />
-                  </button>
-                ) : undefined}
+                {
+                  // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+                  JSON.stringify(state) !== JSON.stringify(defaultColor) ? (
+                    <button onClick={defaultColorFn} title="color reset">
+                      <MdFormatColorReset />
+                    </button>
+                  ) : undefined
+                }
                 <button
                   onClick={setToggle1}
                   title={!toggle1 ? "play" : "pause"}
