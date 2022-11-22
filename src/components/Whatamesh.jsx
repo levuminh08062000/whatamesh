@@ -9,6 +9,7 @@ import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
 import { MdFormatColorReset } from "react-icons/md";
+import { MdFlashlightOff, MdFlashlightOn } from "react-icons/md";
 
 export default function () {
   const idElement = "Whatamesh";
@@ -26,6 +27,8 @@ export default function () {
   const [toggle1, setToggle1] = useToggle(true);
 
   const [toggle2, setToggle2] = useToggle(false);
+
+  const [toggle3, setToggle3] = useToggle(false);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
@@ -130,6 +133,9 @@ export default function () {
           "--gradient-color-4": state[3],
         }}
         className="h-screen w-screen select-none"
+        // https://github.com/jordienr/whatamesh/blob/c4dda98a1f72091817bbbb0c317e84e6bfce9a1d/src/components/editor.vue#L186
+        data-js-darken-top={toggle3 ? "" : false}
+        data-transition-in=""
       ></canvas>
       <Transition
         show={!isIdle}
@@ -166,6 +172,15 @@ export default function () {
                   ) : (
                     <AiOutlineFullscreenExit />
                   )}
+                </button>
+                <button
+                  onClick={() => {
+                    setToggle3();
+                    refInitGradient();
+                  }}
+                  title="toggle darken top"
+                >
+                  {toggle3 ? <MdFlashlightOn /> : <MdFlashlightOff />}
                 </button>
               </div>
             </div>
