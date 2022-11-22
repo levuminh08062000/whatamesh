@@ -160,8 +160,11 @@ export default function () {
                     <MdFormatColorReset />
                   </button>
                 ) : undefined}
-                <button onClick={setToggle1} title={toggle1 ? "pause" : "play"}>
-                  {toggle1 ? <IoPause /> : <IoPlay />}
+                <button
+                  onClick={setToggle1}
+                  title={!toggle1 ? "play" : "pause"}
+                >
+                  {!toggle1 ? <IoPlay /> : <IoPause />}
                 </button>
                 <button
                   onClick={setToggle2}
