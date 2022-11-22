@@ -164,7 +164,7 @@ export default function () {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-1 pl-4 text-xl sm:pl-11 sm:text-2xl">
+            <div className="flex flex-col items-start gap-y-1 pl-5 text-xl sm:pl-10 sm:text-2xl">
               {/* https://github.com/davidmerfield/randomColor#options */}
               <button onClick={rColor}>random</button>
               <button onClick={bColor}>bright</button>
