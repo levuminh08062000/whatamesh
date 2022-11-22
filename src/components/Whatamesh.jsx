@@ -44,23 +44,6 @@ export default function () {
     refInitGradient();
   }
 
-  // function function1(parameter) {
-  //   return (
-  //     <div className="flex flex-row items-baseline">
-  //       <button onClick={() => setRandomColorGradient({ hue: parameter })}>
-  //         {parameter}
-  //       </button>
-  //       <button
-  //         onClick={() =>
-  //           setRandomColorGradient({ hue: parameter, luminosity: "dark" })
-  //         }
-  //       >
-  //         Dark
-  //       </button>
-  //     </div>
-  //   );
-  // }
-
   function defaultColorFn() {
     setState(defaultColor);
     refInitGradient();
@@ -193,14 +176,6 @@ export default function () {
               <button onClick={bColor}>bright</button>
               <button onClick={lColor}>light</button>
               <button onClick={dColor}>dark</button>
-              {/* {function1("red")}
-              {function1("orange")}
-              {function1("yellow")}
-              {function1("green")}
-              {function1("blue")}
-              {function1("purple")}
-              {function1("pink")}
-              {function1("monochrome")} */}
             </div>
           </div>
           <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
