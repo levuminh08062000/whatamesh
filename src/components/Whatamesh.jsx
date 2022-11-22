@@ -1,3 +1,4 @@
+// https://github.com/jordienr/whatamesh/blob/master/src/components/editor.vue
 import { Gradient } from "whatamesh";
 import { useEffect, useState, useRef } from "react";
 import { randomColor } from "randomcolor";
