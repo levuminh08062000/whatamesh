@@ -51,7 +51,7 @@ export default function () {
     refreshGradient();
   }
 
-  function defaultColorFn() {
+  function setDefaultColorPalette() {
     setState(defaultColorPalette);
     refreshGradient();
   }
@@ -140,7 +140,7 @@ export default function () {
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
                 {isNotDefaultColorPalette ? (
-                  <button onClick={defaultColorFn} title="color reset">
+                  <button onClick={setDefaultColorPalette} title="color reset">
                     <MdFormatColorReset />
                   </button>
                 ) : undefined}
