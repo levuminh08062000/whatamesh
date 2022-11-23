@@ -46,6 +46,11 @@ export default function () {
     setToggle1(true); // ??
   }
 
+  function darkenTopGradient() {
+    setToggle3();
+    refreshGradient();
+  }
+
   function setRandomColorPallete(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     refreshGradient();
@@ -53,11 +58,6 @@ export default function () {
 
   function setDefaultColorPalette() {
     setState(defaultColorPalette);
-    refreshGradient();
-  }
-
-  function darkenTopGradient() {
-    setToggle3();
     refreshGradient();
   }
 
