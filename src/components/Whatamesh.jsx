@@ -61,6 +61,7 @@ export default function () {
     refreshGradient();
   }
 
+  // https://github.com/davidmerfield/randomColor#options
   function randomColorPallete() {
     setRandomColorPallete({
       luminosity: "random",
@@ -68,7 +69,6 @@ export default function () {
     });
   }
 
-  // https://github.com/davidmerfield/randomColor#options
   function brightColorPallete() {
     setRandomColorPallete({ luminosity: "bright" });
   }
