@@ -9,6 +9,7 @@ import {
   useFullscreen,
   useKey,
   useLockBodyScroll,
+  useClickAway,
 } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
@@ -24,6 +25,8 @@ export default function () {
   const ref1 = useRef(new Gradient());
 
   const ref2 = useRef(null);
+
+  const ref3 = useRef(null);
 
   const isIdle = useIdle(3e3);
 
@@ -105,6 +108,8 @@ export default function () {
 
   useLockBodyScroll(true);
 
+  useClickAway(ref3, handleDarkenTopGradient);
+
   useEffect(() => {
     handleRefreshGradient();
   }, []);
@@ -156,7 +161,7 @@ export default function () {
         className="fixed"
       >
         <div className="fex-col flex h-screen w-screen p-7 md:p-10">
-          <div className="flex flex-col gap-y-2">
+          <div className="flex flex-col gap-y-2" ref={ref3}>
             <div className="flex flex-row items-baseline gap-x-1">
               <h1 className="font-serif text-5xl sm:first-letter:text-9xl">
                 {idCanvas}
@@ -192,7 +197,10 @@ export default function () {
               ) : undefined}
             </div>
           </div>
-          <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
+          <div
+            className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl"
+            ref={ref3}
+          >
             <a href="https://github.com/shenlong616/whatamesh" target="_blank">
               <GoMarkGithub />
             </a>
