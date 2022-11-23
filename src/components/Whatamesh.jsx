@@ -93,11 +93,7 @@ export default function () {
   useKey("f", setToggle2);
   useKey("Enter", setToggle2);
   useKey("Control", handleDarkenTopGradient);
-  useKey("Shift", handleDarkenTopGradient);
-  useKey("r", randomColorPalette);
-  useKey("b", brightColorPalette);
-  useKey("l", lightColorPalette);
-  useKey("d", darkColorPalette);
+  useKey("r", resetColorPalette);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
