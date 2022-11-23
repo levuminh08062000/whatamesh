@@ -9,8 +9,8 @@ import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
 import {
-  MdFlashlightOff,
-  MdFlashlightOn,
+  MdOutlineDarkMode,
+  MdDarkMode,
   MdFormatColorReset,
 } from "react-icons/md";
 
@@ -165,7 +165,7 @@ export default function () {
                   onClick={setDarkenTopGradient}
                   title="toggle darken top"
                 >
-                  {!toggle3 ? <MdFlashlightOn /> : <MdFlashlightOff />}
+                  {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
                 </button>
               </div>
             </div>
