@@ -15,7 +15,7 @@ import {
 } from "react-icons/md";
 
 export default function () {
-  const idElement = "Whatamesh";
+  const idCanvas = "Whatamesh";
 
   const defaultColor = ["#000000", "#111111", "#222222", "#333333"];
 
@@ -42,7 +42,7 @@ export default function () {
   });
 
   function refInitGradient() {
-    ref1.current.initGradient(`#${idElement}`);
+    ref1.current.initGradient(`#${idCanvas}`);
     setToggle1(true); // ??
   }
 
@@ -115,7 +115,7 @@ export default function () {
       ref={ref2}
     >
       <canvas
-        id={idElement}
+        id={idCanvas}
         style={{
           "--gradient-color-1": state[0],
           "--gradient-color-2": state[1],
@@ -141,7 +141,7 @@ export default function () {
           <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
               <h1 className="font-serif text-5xl sm:first-letter:text-8xl">
-                {idElement}
+                {idCanvas}
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
                 {isNotDefaultColor ? (
