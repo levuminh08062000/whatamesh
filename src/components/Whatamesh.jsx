@@ -34,7 +34,7 @@ export default function () {
   const [toggle3, setToggle3] = useToggle(false);
 
   // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
-  const isNotDefaultColor =
+  const isNotDefaultColorPalette =
     JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
 
   useFullscreen(ref2, toggle2, {
@@ -144,7 +144,7 @@ export default function () {
                 {idCanvas}
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
-                {isNotDefaultColor ? (
+                {isNotDefaultColorPalette ? (
                   <button onClick={defaultColorFn} title="color reset">
                     <MdFormatColorReset />
                   </button>
