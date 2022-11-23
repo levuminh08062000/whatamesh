@@ -39,24 +39,24 @@ export default function () {
   const isNotDefaultColorPalette =
     JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
 
-  function refreshGradient() {
+  function handleRefreshGradient() {
     ref1.current.initGradient(`#${idCanvas}`);
     setToggle1(true); // ??
   }
 
   function setDarkenTopGradient() {
     setToggle3();
-    refreshGradient();
+    handleRefreshGradient();
   }
 
   function setColorPaletteGradient(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
-    refreshGradient();
+    handleRefreshGradient();
   }
 
   function setDefaultColorPalette() {
     setState(defaultColorPalette);
-    refreshGradient();
+    handleRefreshGradient();
   }
 
   // https://github.com/davidmerfield/randomColor#options
@@ -106,7 +106,7 @@ export default function () {
   useLockBodyScroll(true);
 
   useEffect(() => {
-    refreshGradient();
+    handleRefreshGradient();
   }, []);
 
   // useEffect(randomColorPalette, [useMouseWheel()]);
