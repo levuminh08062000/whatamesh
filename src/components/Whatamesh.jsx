@@ -47,7 +47,7 @@ export default function () {
     refreshGradient();
   }
 
-  function setRandomColorPallete(parameter) {
+  function setColorPaletteGradient(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     refreshGradient();
   }
@@ -59,22 +59,22 @@ export default function () {
 
   // https://github.com/davidmerfield/randomColor#options
   function randomColorPallete() {
-    setRandomColorPallete({
+    setColorPaletteGradient({
       luminosity: "random",
       hue: "random",
     });
   }
 
   function brightColorPallete() {
-    setRandomColorPallete({ luminosity: "bright" });
+    setColorPaletteGradient({ luminosity: "bright" });
   }
 
   function lightColorPallete() {
-    setRandomColorPallete({ luminosity: "light" });
+    setColorPaletteGradient({ luminosity: "light" });
   }
 
   function darkColorPallete() {
-    setRandomColorPallete({ luminosity: "dark" });
+    setColorPaletteGradient({ luminosity: "dark" });
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
