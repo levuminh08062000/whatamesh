@@ -85,13 +85,13 @@ export default function () {
     setColorPalette({ luminosity: "dark" });
   }
 
-  function handleWindowBlur() {
-    setToggle1(false);
-  }
+  // function handleWindowBlur() {
+  //   setToggle1(false);
+  // }
 
-  function handleWindowFocus() {
-    setToggle1(true);
-  }
+  // function handleWindowFocus() {
+  //   setToggle1(true);
+  // }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
   useKey("p", setToggle1);
@@ -121,15 +121,15 @@ export default function () {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
   }, [toggle1]);
 
-  useEffect(() => {
-    window.addEventListener("blur", handleWindowBlur);
-    window.addEventListener("focus", handleWindowFocus);
+  // useEffect(() => {
+  //   window.addEventListener("blur", handleWindowBlur);
+  //   window.addEventListener("focus", handleWindowFocus);
 
-    return () => {
-      window.removeEventListener("blur", handleWindowBlur);
-      window.removeEventListener("focus", handleWindowFocus);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("blur", handleWindowBlur);
+  //     window.removeEventListener("focus", handleWindowFocus);
+  //   };
+  // }, []);
 
   return (
     <div
@@ -162,7 +162,7 @@ export default function () {
         className="fixed"
       >
         <div className="fex-col flex h-screen w-screen p-7 md:p-10">
-          <div className="flex flex-col gap-y-1">
+          <div className="flex flex-col gap-y-2">
             <div className="flex flex-row items-baseline gap-x-1">
               <h1 className="font-serif text-5xl sm:first-letter:text-8xl">
                 {idCanvas}
