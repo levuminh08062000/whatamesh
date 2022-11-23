@@ -2,11 +2,11 @@
 
 ## Screenshots
 
-![](./README/images/screenshots/1.png)
+![](./README/images/screenshots/0.png)
 
 ## To do
 
-- [ ] Add other settings [`ref1.current`](src/components/Whatamesh.jsx#L16)
+- [ ] Add more options [`ref1.current`](src/components/Whatamesh.jsx#L16)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 - [x] Keyboard shortcut
 
@@ -20,7 +20,7 @@
 📂README
  ┗ 📂images
  ┃ ┗ 📂screenshots
- ┃ ┃ ┗ 1.png
+ ┃ ┃ ┗ 0.png
 
  📂src
  ┣ 📂components
