@@ -14,11 +14,7 @@ import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
-import {
-  MdOutlineDarkMode,
-  MdDarkMode,
-  MdFormatColorReset,
-} from "react-icons/md";
+import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 
 export default function () {
   const idCanvas = "Whatamesh";
@@ -166,11 +162,6 @@ export default function () {
                 {idCanvas}
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
-                {isNotDefaultColorPalette ? (
-                  <button onClick={setDefaultColorPalette} title="color reset">
-                    <MdFormatColorReset />
-                  </button>
-                ) : undefined}
                 <button
                   onClick={setToggle1}
                   title={!toggle1 ? "play" : "pause"}
@@ -191,11 +182,14 @@ export default function () {
                 </button>
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-1 pl-5 text-xl sm:pl-10 sm:text-2xl">
+            <div className="flex flex-col items-start gap-y-1 px-5 text-xl sm:px-12 sm:text-2xl">
               <button onClick={randomColorPalette}>random</button>
               <button onClick={brightColorPalette}>bright</button>
               <button onClick={lightColorPalette}>light</button>
               <button onClick={darkColorPalette}>dark</button>
+              {isNotDefaultColorPalette ? (
+                <button onClick={setDefaultColorPalette}>reset</button>
+              ) : undefined}
             </div>
           </div>
           <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
