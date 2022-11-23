@@ -42,7 +42,7 @@ export default function () {
     setToggle1(true); // ??
   }
 
-  function darkenTopGradient() {
+  function setDarkenTopGradient() {
     setToggle3();
     refreshGradient();
   }
@@ -52,12 +52,12 @@ export default function () {
     refreshGradient();
   }
 
-  // https://github.com/davidmerfield/randomColor#options
   function defaultColorPalette() {
     setState(initDefaultColorPalette);
     refreshGradient();
   }
 
+  // https://github.com/davidmerfield/randomColor#options
   function randomColorPallete() {
     setRandomColorPallete({
       luminosity: "random",
@@ -82,8 +82,8 @@ export default function () {
   useKey(" ", setToggle1);
   useKey("f", setToggle2);
   useKey("Enter", setToggle2);
-  useKey("Control", darkenTopGradient);
-  useKey("Shift", darkenTopGradient);
+  useKey("Control", setDarkenTopGradient);
+  useKey("Shift", setDarkenTopGradient);
   useKey("r", randomColorPallete);
   useKey("b", brightColorPallete);
   useKey("l", lightColorPallete);
@@ -161,7 +161,10 @@ export default function () {
                     <AiOutlineFullscreenExit />
                   )}
                 </button>
-                <button onClick={darkenTopGradient} title="toggle darken top">
+                <button
+                  onClick={setDarkenTopGradient}
+                  title="toggle darken top"
+                >
                   {!toggle3 ? <MdFlashlightOn /> : <MdFlashlightOff />}
                 </button>
               </div>
