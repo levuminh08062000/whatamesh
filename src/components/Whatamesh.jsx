@@ -17,15 +17,15 @@ import {
 export default function () {
   const idCanvas = "Whatamesh";
 
-  const defaultColor = ["#000000", "#111111", "#222222", "#333333"];
+  const defaultColorPalette = ["#000000", "#111111", "#222222", "#333333"];
 
   const ref1 = useRef(new Gradient());
 
   const ref2 = useRef(null);
 
-  const [state, setState] = useState(defaultColor);
-
   const isIdle = useIdle(3e3);
+
+  const [state, setState] = useState(defaultColorPalette);
 
   const [toggle1, setToggle1] = useToggle(true);
 
@@ -35,7 +35,7 @@ export default function () {
 
   // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
   const isNotDefaultColor =
-    JSON.stringify(state) !== JSON.stringify(defaultColor);
+    JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
@@ -52,7 +52,7 @@ export default function () {
   }
 
   function defaultColorFn() {
-    setState(defaultColor);
+    setState(defaultColorPalette);
     refInitGradient();
   }
 
