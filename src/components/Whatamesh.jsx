@@ -44,7 +44,7 @@ export default function () {
     setToggle1(true); // ??
   }
 
-  function setDarkenTopGradient() {
+  function handleDarkenTopGradient() {
     setToggle3();
     handleRefreshGradient();
   }
@@ -92,8 +92,8 @@ export default function () {
   useKey(" ", setToggle1);
   useKey("f", setToggle2);
   useKey("Enter", setToggle2);
-  useKey("Control", setDarkenTopGradient);
-  useKey("Shift", setDarkenTopGradient);
+  useKey("Control", handleDarkenTopGradient);
+  useKey("Shift", handleDarkenTopGradient);
   useKey("r", randomColorPalette);
   useKey("b", brightColorPalette);
   useKey("l", lightColorPalette);
@@ -175,7 +175,7 @@ export default function () {
                   {!toggle2 ? <TbMaximize /> : <TbMaximizeOff />}
                 </button>
                 <button
-                  onClick={setDarkenTopGradient}
+                  onClick={handleDarkenTopGradient}
                   title="toggle darken top"
                 >
                   {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
