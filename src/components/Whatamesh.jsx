@@ -46,7 +46,7 @@ export default function () {
     setToggle1(true); // ??
   }
 
-  function setRandomColorGradient(parameter) {
+  function setRandomColorPallete(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     refreshGradient();
   }
@@ -62,22 +62,22 @@ export default function () {
   }
 
   function rColor() {
-    setRandomColorGradient({
+    setRandomColorPallete({
       luminosity: "random",
       hue: "random",
     });
   }
 
   function bColor() {
-    setRandomColorGradient({ luminosity: "bright" });
+    setRandomColorPallete({ luminosity: "bright" });
   }
 
   function lColor() {
-    setRandomColorGradient({ luminosity: "light" });
+    setRandomColorPallete({ luminosity: "light" });
   }
 
   function dColor() {
-    setRandomColorGradient({ luminosity: "dark" });
+    setRandomColorPallete({ luminosity: "dark" });
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
@@ -96,12 +96,7 @@ export default function () {
     refreshGradient();
   }, []);
 
-  // useEffect(() => {
-  //   setRandomColorGradient({
-  //     luminosity: "random",
-  //     hue: "random",
-  //   });
-  // }, [useMouseWheel()]);
+  // useEffect(rColor, [useMouseWheel()]);
 
   useEffect(() => {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
