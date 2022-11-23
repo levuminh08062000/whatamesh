@@ -9,6 +9,7 @@ import {
   useFullscreen,
   useKey,
   useClickAway,
+  useLockBodyScroll,
 } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
@@ -102,6 +103,8 @@ export default function () {
   });
 
   useClickAway(ref3, randomColorPalette);
+
+  useLockBodyScroll(true);
 
   useEffect(() => {
     refreshGradient();
