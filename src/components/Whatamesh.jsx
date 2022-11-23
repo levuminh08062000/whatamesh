@@ -41,24 +41,24 @@ export default function () {
     onClose: () => setToggle2(false),
   });
 
-  function refInitGradient() {
+  function refreshGradient() {
     ref1.current.initGradient(`#${idCanvas}`);
     setToggle1(true); // ??
   }
 
   function setRandomColorGradient(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
-    refInitGradient();
+    refreshGradient();
   }
 
   function defaultColorFn() {
     setState(defaultColorPalette);
-    refInitGradient();
+    refreshGradient();
   }
 
   function darkenTopGradient() {
     setToggle3();
-    refInitGradient();
+    refreshGradient();
   }
 
   function rColor() {
@@ -93,7 +93,7 @@ export default function () {
   useKey("d", dColor);
 
   useEffect(() => {
-    refInitGradient();
+    refreshGradient();
   }, []);
 
   // useEffect(() => {
