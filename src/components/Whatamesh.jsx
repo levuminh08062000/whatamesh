@@ -49,34 +49,34 @@ export default function () {
     handleRefreshGradient();
   }
 
-  function setColorPaletteGradient(parameter) {
+  function setColorPalette(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
     handleRefreshGradient();
   }
 
-  function handleResetColorGradient() {
+  function resetColorPalette() {
     setState(defaultColorPalette);
     handleRefreshGradient();
   }
 
   // https://github.com/davidmerfield/randomColor#options
   function randomColorPalette() {
-    setColorPaletteGradient({
+    setColorPalette({
       luminosity: "random",
       hue: "random",
     });
   }
 
   function brightColorPalette() {
-    setColorPaletteGradient({ luminosity: "bright" });
+    setColorPalette({ luminosity: "bright" });
   }
 
   function lightColorPalette() {
-    setColorPaletteGradient({ luminosity: "light" });
+    setColorPalette({ luminosity: "light" });
   }
 
   function darkColorPalette() {
-    setColorPaletteGradient({ luminosity: "dark" });
+    setColorPalette({ luminosity: "dark" });
   }
 
   function handleWindowBlur() {
@@ -188,7 +188,7 @@ export default function () {
               <button onClick={lightColorPalette}>light</button>
               <button onClick={darkColorPalette}>dark</button>
               {isNotDefaultColorPalette ? (
-                <button onClick={handleResetColorGradient}>reset</button>
+                <button onClick={resetColorPalette}>reset</button>
               ) : undefined}
             </div>
           </div>
