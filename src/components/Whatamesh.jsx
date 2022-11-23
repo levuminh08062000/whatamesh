@@ -54,7 +54,7 @@ export default function () {
     handleRefreshGradient();
   }
 
-  function handleResetColorPalette() {
+  function handleResetColorGradient() {
     setState(defaultColorPalette);
     handleRefreshGradient();
   }
@@ -188,7 +188,7 @@ export default function () {
               <button onClick={lightColorPalette}>light</button>
               <button onClick={darkColorPalette}>dark</button>
               {isNotDefaultColorPalette ? (
-                <button onClick={handleResetColorPalette}>reset</button>
+                <button onClick={handleResetColorGradient}>reset</button>
               ) : undefined}
             </div>
           </div>
