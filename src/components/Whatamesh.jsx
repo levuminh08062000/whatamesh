@@ -23,7 +23,7 @@ export default function () {
 
   const ref1 = useRef(new Gradient());
 
-  const ref2 = useRef(null);
+  const ref2 = useRef();
 
   const isIdle = useIdle(3e3);
 
