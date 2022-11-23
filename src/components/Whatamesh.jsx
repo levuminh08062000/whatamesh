@@ -16,6 +16,7 @@ import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
+import { BiReset } from "react-icons/bi";
 
 export default function () {
   const idCanvas = "Whatamesh";
@@ -185,6 +186,11 @@ export default function () {
                 >
                   {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
                 </button>
+                {isNotDefaultColorPalette ? (
+                  <button onClick={resetColorPalette} title="reset">
+                    <BiReset />
+                  </button>
+                ) : undefined}
               </div>
             </div>
             <div className="flex flex-col items-start gap-y-1 px-5 text-xl sm:px-12 sm:text-2xl">
@@ -192,9 +198,6 @@ export default function () {
               <button onClick={brightColorPalette}>bright</button>
               <button onClick={lightColorPalette}>light</button>
               <button onClick={darkColorPalette}>dark</button>
-              {isNotDefaultColorPalette ? (
-                <button onClick={resetColorPalette}>reset</button>
-              ) : undefined}
             </div>
           </div>
           <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
