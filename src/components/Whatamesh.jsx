@@ -33,6 +33,10 @@ export default function () {
 
   const [toggle3, setToggle3] = useToggle(false);
 
+  // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+  const isNotDefaultColor =
+    JSON.stringify(state) !== JSON.stringify(defaultColor);
+
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
   });
@@ -80,8 +84,9 @@ export default function () {
   useKey("p", setToggle1);
   useKey(" ", setToggle1);
   useKey("f", setToggle2);
-  useKey("Enter", darkenTopGradient);
-  useKey("Escape", defaultColorFn);
+  useKey("Enter", setToggle2);
+  useKey("Control", darkenTopGradient);
+  useKey("Shift", darkenTopGradient);
   useKey("r", rColor);
   useKey("b", bColor);
   useKey("l", lColor);
@@ -139,14 +144,11 @@ export default function () {
                 {idElement}
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
-                {
-                  // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
-                  JSON.stringify(state) !== JSON.stringify(defaultColor) ? (
-                    <button onClick={defaultColorFn} title="color reset">
-                      <MdFormatColorReset />
-                    </button>
-                  ) : undefined
-                }
+                {isNotDefaultColor ? (
+                  <button onClick={defaultColorFn} title="color reset">
+                    <MdFormatColorReset />
+                  </button>
+                ) : undefined}
                 <button
                   onClick={setToggle1}
                   title={!toggle1 ? "play" : "pause"}
