@@ -58,22 +58,22 @@ export default function () {
   }
 
   // https://github.com/davidmerfield/randomColor#options
-  function randomColorPallete() {
+  function randomColorPalette() {
     setColorPaletteGradient({
       luminosity: "random",
       hue: "random",
     });
   }
 
-  function brightColorPallete() {
+  function brightColorPalette() {
     setColorPaletteGradient({ luminosity: "bright" });
   }
 
-  function lightColorPallete() {
+  function lightColorPalette() {
     setColorPaletteGradient({ luminosity: "light" });
   }
 
-  function darkColorPallete() {
+  function darkColorPalette() {
     setColorPaletteGradient({ luminosity: "dark" });
   }
 
@@ -84,10 +84,10 @@ export default function () {
   useKey("Enter", setToggle2);
   useKey("Control", setDarkenTopGradient);
   useKey("Shift", setDarkenTopGradient);
-  useKey("r", randomColorPallete);
-  useKey("b", brightColorPallete);
-  useKey("l", lightColorPallete);
-  useKey("d", darkColorPallete);
+  useKey("r", randomColorPalette);
+  useKey("b", brightColorPalette);
+  useKey("l", lightColorPalette);
+  useKey("d", darkColorPalette);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
@@ -97,7 +97,7 @@ export default function () {
     refreshGradient();
   }, []);
 
-  // useEffect(randomColorPallete, [useMouseWheel()]);
+  // useEffect(randomColorPalette, [useMouseWheel()]);
 
   useEffect(() => {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
@@ -170,10 +170,10 @@ export default function () {
               </div>
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-5 text-xl sm:pl-10 sm:text-2xl">
-              <button onClick={randomColorPallete}>random</button>
-              <button onClick={brightColorPallete}>bright</button>
-              <button onClick={lightColorPallete}>light</button>
-              <button onClick={darkColorPallete}>dark</button>
+              <button onClick={randomColorPalette}>random</button>
+              <button onClick={brightColorPalette}>bright</button>
+              <button onClick={lightColorPalette}>light</button>
+              <button onClick={darkColorPalette}>dark</button>
             </div>
           </div>
           <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
