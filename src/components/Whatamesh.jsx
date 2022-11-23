@@ -17,7 +17,7 @@ import {
 export default function () {
   const idCanvas = "Whatamesh";
 
-  const initDefaultColorPalette = ["#000000", "#111111", "#222222", "#333333"];
+  const defaultColorPalette = ["#000000", "#111111", "#222222", "#333333"];
 
   const ref1 = useRef(new Gradient());
 
@@ -25,7 +25,7 @@ export default function () {
 
   const isIdle = useIdle(3e3);
 
-  const [state, setState] = useState(initDefaultColorPalette);
+  const [state, setState] = useState(defaultColorPalette);
 
   const [toggle1, setToggle1] = useToggle(true);
 
@@ -35,7 +35,7 @@ export default function () {
 
   // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
   const isNotDefaultColorPalette =
-    JSON.stringify(state) !== JSON.stringify(initDefaultColorPalette);
+    JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
 
   function refreshGradient() {
     ref1.current.initGradient(`#${idCanvas}`);
@@ -52,8 +52,8 @@ export default function () {
     refreshGradient();
   }
 
-  function defaultColorPalette() {
-    setState(initDefaultColorPalette);
+  function setDefaultColorPalette() {
+    setState(defaultColorPalette);
     refreshGradient();
   }
 
@@ -141,7 +141,7 @@ export default function () {
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
                 {isNotDefaultColorPalette ? (
-                  <button onClick={defaultColorPalette} title="color reset">
+                  <button onClick={setDefaultColorPalette} title="color reset">
                     <MdFormatColorReset />
                   </button>
                 ) : undefined}
