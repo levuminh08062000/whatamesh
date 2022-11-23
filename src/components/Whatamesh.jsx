@@ -128,7 +128,7 @@ export default function () {
           "--gradient-color-3": state[2],
           "--gradient-color-4": state[3],
         }}
-        className="h-screen w-screen select-none"
+        className="h-screen w-screen"
         // https://github.com/jordienr/whatamesh/blob/c4dda98a1f72091817bbbb0c317e84e6bfce9a1d/src/components/editor.vue#L186
         data-js-darken-top={toggle3 ? "" : false}
         data-transition-in=""

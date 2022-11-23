@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  *,
+  canvas {
+    @apply select-none;
+  }
+
   h1 {
     @apply text-slate-50;
   }
