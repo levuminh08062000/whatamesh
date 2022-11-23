@@ -68,6 +68,7 @@ export default function () {
     });
   }
 
+  // https://github.com/davidmerfield/randomColor#options
   function brightColorPallete() {
     setRandomColorPallete({ luminosity: "bright" });
   }
@@ -166,7 +167,6 @@ export default function () {
               </div>
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-5 text-xl sm:pl-10 sm:text-2xl">
-              {/* https://github.com/davidmerfield/randomColor#options */}
               <button onClick={randomColorPallete}>random</button>
               <button onClick={brightColorPallete}>bright</button>
               <button onClick={lightColorPallete}>light</button>
