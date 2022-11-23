@@ -17,7 +17,7 @@ import {
 export default function () {
   const idCanvas = "Whatamesh";
 
-  const defaultColorPalette = ["#000000", "#111111", "#222222", "#333333"];
+  const initDefaultColorPalette = ["#000000", "#111111", "#222222", "#333333"];
 
   const ref1 = useRef(new Gradient());
 
@@ -25,7 +25,7 @@ export default function () {
 
   const isIdle = useIdle(3e3);
 
-  const [state, setState] = useState(defaultColorPalette);
+  const [state, setState] = useState(initDefaultColorPalette);
 
   const [toggle1, setToggle1] = useToggle(true);
 
@@ -35,7 +35,7 @@ export default function () {
 
   // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
   const isNotDefaultColorPalette =
-    JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
+    JSON.stringify(state) !== JSON.stringify(initDefaultColorPalette);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
@@ -56,12 +56,12 @@ export default function () {
     refreshGradient();
   }
 
-  function setDefaultColorPalette() {
-    setState(defaultColorPalette);
+  // https://github.com/davidmerfield/randomColor#options
+  function defaultColorPalette() {
+    setState(initDefaultColorPalette);
     refreshGradient();
   }
 
-  // https://github.com/davidmerfield/randomColor#options
   function randomColorPallete() {
     setRandomColorPallete({
       luminosity: "random",
@@ -141,7 +141,7 @@ export default function () {
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
                 {isNotDefaultColorPalette ? (
-                  <button onClick={setDefaultColorPalette} title="color reset">
+                  <button onClick={defaultColorPalette} title="color reset">
                     <MdFormatColorReset />
                   </button>
                 ) : undefined}
