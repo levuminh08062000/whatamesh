@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  *,
-  canvas {
+  * {
     @apply select-none;
   }
 
