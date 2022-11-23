@@ -37,10 +37,6 @@ export default function () {
   const isNotDefaultColorPalette =
     JSON.stringify(state) !== JSON.stringify(initDefaultColorPalette);
 
-  useFullscreen(ref2, toggle2, {
-    onClose: () => setToggle2(false),
-  });
-
   function refreshGradient() {
     ref1.current.initGradient(`#${idCanvas}`);
     setToggle1(true); // ??
@@ -92,6 +88,10 @@ export default function () {
   useKey("b", brightColorPallete);
   useKey("l", lightColorPallete);
   useKey("d", darkColorPallete);
+
+  useFullscreen(ref2, toggle2, {
+    onClose: () => setToggle2(false),
+  });
 
   useEffect(() => {
     refreshGradient();
