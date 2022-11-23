@@ -61,22 +61,22 @@ export default function () {
     refreshGradient();
   }
 
-  function rColor() {
+  function randomColorPallete() {
     setRandomColorPallete({
       luminosity: "random",
       hue: "random",
     });
   }
 
-  function bColor() {
+  function brightColorPallete() {
     setRandomColorPallete({ luminosity: "bright" });
   }
 
-  function lColor() {
+  function lightColorPallete() {
     setRandomColorPallete({ luminosity: "light" });
   }
 
-  function dColor() {
+  function darkColorPallete() {
     setRandomColorPallete({ luminosity: "dark" });
   }
 
@@ -87,16 +87,16 @@ export default function () {
   useKey("Enter", setToggle2);
   useKey("Control", darkenTopGradient);
   useKey("Shift", darkenTopGradient);
-  useKey("r", rColor);
-  useKey("b", bColor);
-  useKey("l", lColor);
-  useKey("d", dColor);
+  useKey("r", randomColorPallete);
+  useKey("b", brightColorPallete);
+  useKey("l", lightColorPallete);
+  useKey("d", darkColorPallete);
 
   useEffect(() => {
     refreshGradient();
   }, []);
 
-  // useEffect(rColor, [useMouseWheel()]);
+  // useEffect(randomColorPallete, [useMouseWheel()]);
 
   useEffect(() => {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
@@ -167,10 +167,10 @@ export default function () {
             </div>
             <div className="flex flex-col items-start gap-y-1 pl-5 text-xl sm:pl-10 sm:text-2xl">
               {/* https://github.com/davidmerfield/randomColor#options */}
-              <button onClick={rColor}>random</button>
-              <button onClick={bColor}>bright</button>
-              <button onClick={lColor}>light</button>
-              <button onClick={dColor}>dark</button>
+              <button onClick={randomColorPallete}>random</button>
+              <button onClick={brightColorPallete}>bright</button>
+              <button onClick={lightColorPallete}>light</button>
+              <button onClick={darkColorPallete}>dark</button>
             </div>
           </div>
           <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
