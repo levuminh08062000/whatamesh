@@ -9,6 +9,7 @@ import {
   useFullscreen,
   useKey,
   useLockBodyScroll,
+  useMouseWheel,
 } from "react-use";
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
@@ -24,6 +25,10 @@ export default function () {
   const ref1 = useRef(new Gradient());
 
   const ref2 = useRef();
+
+  const ref3 = useRef(useMouseWheel());
+
+  const mouseWheel = useMouseWheel();
 
   const isIdle = useIdle(3e3);
 
@@ -105,7 +110,11 @@ export default function () {
     handleRefreshGradient();
   }, []);
 
-  // useEffect(randomColorPalette, [useMouseWheel()]);
+  useEffect(() => {
+    // ??
+    ref3.current !== mouseWheel ? randomColorPalette() : undefined;
+    ref3.current = mouseWheel;
+  }, [mouseWheel]);
 
   useEffect(() => {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
