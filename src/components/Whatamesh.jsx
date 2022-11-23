@@ -13,7 +13,7 @@ import {
 import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
-import { AiOutlineFullscreenExit, AiOutlineFullscreen } from "react-icons/ai";
+import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
 import {
   MdOutlineDarkMode,
   MdDarkMode,
@@ -163,11 +163,7 @@ export default function () {
                   onClick={setToggle2}
                   title={!toggle2 ? "fullscreen" : "fullscreen exit"}
                 >
-                  {!toggle2 ? (
-                    <AiOutlineFullscreen />
-                  ) : (
-                    <AiOutlineFullscreenExit />
-                  )}
+                  {!toggle2 ? <TbMaximize /> : <TbMaximizeOff />}
                 </button>
                 <button
                   onClick={setDarkenTopGradient}
