@@ -162,8 +162,8 @@ export default function () {
         className="fixed"
       >
         <div className="fex-col flex h-screen w-screen p-7 md:p-10">
-          <div className="flex flex-col gap-y-3">
-            <div className="flex flex-row items-baseline gap-x-1">
+          <div className="flex flex-col gap-y-2">
+            <div className="flex flex-row items-baseline gap-x-0.5">
               <h1 className="font-serif text-5xl sm:first-letter:text-8xl">
                 {idCanvas}
               </h1>
@@ -193,7 +193,7 @@ export default function () {
                 ) : undefined}
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-1 px-5 text-xl sm:px-12 sm:text-2xl">
+            <div className="flex flex-col items-start gap-y-0.5 px-5 text-xl sm:px-12 sm:text-2xl">
               <button onClick={randomColorPalette}>random</button>
               <button onClick={brightColorPalette}>bright</button>
               <button onClick={lightColorPalette}>light</button>
