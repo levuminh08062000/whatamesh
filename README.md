@@ -2,17 +2,17 @@
 
 ## Screenshots
 
-![](./README/images/screenshots/0.png)
+![](./README/images/screenshots/1.png)
 
 ## To do
 
-- [ ] Add more options [`ref1.current`](src/components/Whatamesh.jsx#L16)
+- [ ] Add more options [`ref1.current`](src/components/Whatamesh.jsx#L26)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 - [x] Keyboard shortcut
 
 ## Bugs
 
-- [ ] [unknown](/src/components/Whatamesh.jsx#L205)
+- [ ] [unknown](/src/components/Whatamesh.jsx#L209)
 
 ## Tree files
 
@@ -20,7 +20,7 @@
 📂README
  ┗ 📂images
  ┃ ┗ 📂screenshots
- ┃ ┃ ┗ 0.png
+ ┃ ┃ ┗ 1.png
 
  📂src
  ┣ 📂components
