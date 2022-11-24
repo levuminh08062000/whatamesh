@@ -53,7 +53,7 @@ export default function () {
     JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
 
   function handleRef4SetInterval() {
-    ref4.current = setInterval(() => randomColorPalette(), 1000);
+    ref4.current = setInterval(() => randomColorPalette(), 1e3);
   }
 
   function handleRef4ClearInterval() {
@@ -125,7 +125,9 @@ export default function () {
   }, [mouseWheel]);
 
   useEffect(() => {
-    toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
+    // ??
+    // ref1.current.conf.playing
+    toggle1 ? ref1.current.play() : ref1.current.pause();
   }, [toggle1]);
 
   useEffect(() => {
