@@ -16,10 +16,7 @@ import { GoMarkGithub } from "react-icons/go";
 import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 import { VscDebugStepBack } from "react-icons/vsc";
-import {
-  RiCheckboxBlankCircleLine,
-  RiCheckboxBlankCircleFill,
-} from "react-icons/ri";
+import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
 
 export default function () {
   const idCanvas = "Whatamesh";
@@ -194,11 +191,7 @@ export default function () {
                   {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
                 </button>
                 <button onClick={setToggle4} title="toggle random mode">
-                  {!toggle4 ? (
-                    <RiCheckboxBlankCircleLine />
-                  ) : (
-                    <RiCheckboxBlankCircleFill />
-                  )}
+                  {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
                 </button>
                 {isNotDefaultColorPalette && !toggle4 ? (
                   <button onClick={resetColorPalette} title="reset">
