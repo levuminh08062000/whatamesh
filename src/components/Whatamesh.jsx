@@ -7,7 +7,6 @@ import {
   useIdle,
   useToggle,
   useFullscreen,
-  useKey,
   useLockBodyScroll,
   useMouseWheel,
 } from "react-use";
@@ -102,12 +101,12 @@ export default function () {
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
-  useKey("p", setToggle1);
-  useKey(" ", setToggle1);
-  useKey("f", setToggle2);
-  useKey("Enter", setToggle2);
-  useKey("Control", handleDarkenTopGradient);
-  useKey("r", resetColorPalette);
+  // useKey("p", setToggle1);
+  // useKey(" ", setToggle1);
+  // useKey("f", setToggle2);
+  // useKey("Enter", setToggle2);
+  // useKey("Control", handleDarkenTopGradient);
+  // useKey("r", resetColorPalette);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
