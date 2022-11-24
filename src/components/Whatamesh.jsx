@@ -121,7 +121,7 @@ export default function () {
 
   useEffect(() => {
     // ??
-    ref3.current !== mouseWheel ? randomColorPalette() : undefined;
+    ref3.current !== mouseWheel && !toggle4 ? randomColorPalette() : undefined;
     ref3.current = mouseWheel;
   }, [mouseWheel]);
 
