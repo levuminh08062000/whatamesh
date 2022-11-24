@@ -17,6 +17,10 @@ import { GoMarkGithub } from "react-icons/go";
 import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 import { BiReset } from "react-icons/bi";
+import {
+  RiCheckboxBlankCircleLine,
+  RiCheckboxBlankCircleFill,
+} from "react-icons/ri";
 
 export default function () {
   const idCanvas = "Whatamesh";
@@ -28,6 +32,8 @@ export default function () {
   const ref2 = useRef();
 
   const ref3 = useRef(useMouseWheel());
+
+  const ref4 = useRef();
 
   const mouseWheel = useMouseWheel();
 
@@ -41,9 +47,19 @@ export default function () {
 
   const [toggle3, setToggle3] = useToggle(false);
 
+  const [toggle4, setToggle4] = useToggle(false);
+
   // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
   const isNotDefaultColorPalette =
     JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
+
+  function handleRef4SetInterval() {
+    ref4.current = setInterval(() => randomColorPalette(), 1000);
+  }
+
+  function handleRef4ClearInterval() {
+    clearInterval(ref4.current);
+  }
 
   function handleRefreshGradient() {
     ref1.current.initGradient(`#${idCanvas}`);
@@ -85,14 +101,6 @@ export default function () {
     setColorPalette({ luminosity: "dark" });
   }
 
-  // function handleWindowBlur() {
-  //   setToggle1(false);
-  // }
-
-  // function handleWindowFocus() {
-  //   setToggle1(true);
-  // }
-
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
   useKey("p", setToggle1);
   useKey(" ", setToggle1);
@@ -121,15 +129,11 @@ export default function () {
     toggle1 ? ref1.current.play() : ref1.current.pause(); // ??
   }, [toggle1]);
 
-  // useEffect(() => {
-  //   window.addEventListener("blur", handleWindowBlur);
-  //   window.addEventListener("focus", handleWindowFocus);
+  useEffect(() => {
+    toggle4 ? handleRef4SetInterval() : undefined;
 
-  //   return () => {
-  //     window.removeEventListener("blur", handleWindowBlur);
-  //     window.removeEventListener("focus", handleWindowFocus);
-  //   };
-  // }, []);
+    return () => handleRef4ClearInterval();
+  }, [toggle4]);
 
   return (
     <div
@@ -168,12 +172,14 @@ export default function () {
                 {idCanvas}
               </h1>
               <div className="flex flex-row items-baseline text-xs sm:text-sm">
-                <button
-                  onClick={setToggle1}
-                  title={!toggle1 ? "play" : "pause"}
-                >
-                  {!toggle1 ? <IoPlay /> : <IoPause />}
-                </button>
+                {!toggle4 ? (
+                  <button
+                    onClick={setToggle1}
+                    title={!toggle1 ? "play" : "pause"}
+                  >
+                    {!toggle1 ? <IoPlay /> : <IoPause />}
+                  </button>
+                ) : undefined}
                 <button
                   onClick={setToggle2}
                   title={!toggle2 ? "fullscreen" : "fullscreen exit"}
@@ -186,19 +192,28 @@ export default function () {
                 >
                   {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
                 </button>
-                {isNotDefaultColorPalette ? (
+                <button onClick={setToggle4} title="toggle random mode">
+                  {!toggle4 ? (
+                    <RiCheckboxBlankCircleLine />
+                  ) : (
+                    <RiCheckboxBlankCircleFill />
+                  )}
+                </button>
+                {isNotDefaultColorPalette && !toggle4 ? (
                   <button onClick={resetColorPalette} title="reset">
                     <BiReset />
                   </button>
                 ) : undefined}
               </div>
             </div>
-            <div className="flex flex-col items-start gap-y-0.5 px-5 text-xl sm:px-12 sm:text-2xl">
-              <button onClick={randomColorPalette}>random</button>
-              <button onClick={brightColorPalette}>bright</button>
-              <button onClick={lightColorPalette}>light</button>
-              <button onClick={darkColorPalette}>dark</button>
-            </div>
+            {!toggle4 ? (
+              <div className="flex flex-col items-start gap-y-0.5 px-5 text-xl sm:px-12 sm:text-2xl">
+                <button onClick={randomColorPalette}>random</button>
+                <button onClick={brightColorPalette}>bright</button>
+                <button onClick={lightColorPalette}>light</button>
+                <button onClick={darkColorPalette}>dark</button>
+              </div>
+            ) : undefined}
           </div>
           <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
             <a href="https://github.com/shenlong616/whatamesh" target="_blank">
