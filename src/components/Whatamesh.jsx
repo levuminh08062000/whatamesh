@@ -178,10 +178,7 @@ export default function () {
                     {!toggle1 ? <IoPlay /> : <IoPause />}
                   </button>
                 ) : undefined}
-                <button
-                  onClick={setToggle2}
-                  title={!toggle2 ? "fullscreen" : "fullscreen exit"}
-                >
+                <button onClick={setToggle2} title="toggle fullscreen">
                   {!toggle2 ? <TbMaximize /> : <TbMaximizeOff />}
                 </button>
                 <button
