@@ -16,7 +16,7 @@ import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
-import { BiReset } from "react-icons/bi";
+import { VscDebugStepBack } from "react-icons/vsc";
 import {
   RiCheckboxBlankCircleLine,
   RiCheckboxBlankCircleFill,
@@ -201,7 +201,7 @@ export default function () {
                 </button>
                 {isNotDefaultColorPalette && !toggle4 ? (
                   <button onClick={resetColorPalette} title="reset">
-                    <BiReset />
+                    <VscDebugStepBack />
                   </button>
                 ) : undefined}
               </div>
