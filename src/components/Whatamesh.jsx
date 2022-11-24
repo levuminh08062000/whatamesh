@@ -166,9 +166,7 @@ export default function () {
         <div className="fex-col flex h-screen w-screen p-7 md:p-10">
           <div className="flex flex-col gap-y-1.5">
             <div className="flex flex-row items-baseline gap-x-0.5">
-              <h1 className="font-serif text-5xl sm:first-letter:text-8xl">
-                {idCanvas}
-              </h1>
+              <h1 className="text-5xl sm:first-letter:text-8xl">{idCanvas}</h1>
               <div className="flex flex-row items-baseline text-sm sm:text-sm">
                 {!toggle4 ? (
                   <button
