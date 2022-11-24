@@ -98,12 +98,7 @@ export default function () {
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
-  // useKey("p", setToggle1);
-  // useKey(" ", setToggle1);
-  // useKey("f", setToggle2);
-  // useKey("Enter", setToggle2);
-  // useKey("Control", handleDarkenTopGradient);
-  // useKey("r", resetColorPalette);
+  // useKey("p", callbackFn);
 
   useFullscreen(ref2, toggle2, {
     onClose: () => setToggle2(false),
@@ -112,6 +107,9 @@ export default function () {
   useLockBodyScroll(true);
 
   useEffect(() => {
+    // console.log(ref1.current);
+    ref1.current.amp = new Date().getSeconds() % 2 === 0 ? 3e2 : 4e2;
+    ref1.current.seed = new Date().getSeconds();
     handleRefreshGradient();
   }, []);
 
@@ -166,7 +164,7 @@ export default function () {
         <div className="fex-col flex h-screen w-screen p-7 md:p-10">
           <div className="flex flex-col gap-y-1.5">
             <div className="flex flex-row items-baseline gap-x-0.5">
-              <h1 className="text-5xl sm:first-letter:text-8xl">{idCanvas}</h1>
+              <h1 className="text-4xl sm:first-letter:text-8xl">{idCanvas}</h1>
               <div className="flex flex-row items-baseline text-sm sm:text-sm">
                 {!toggle4 ? (
                   <button
@@ -196,7 +194,7 @@ export default function () {
               </div>
             </div>
             {!toggle4 ? (
-              <div className="flex flex-col items-start gap-y-0.5 px-5 text-xl sm:px-12 sm:text-2xl">
+              <div className="flex flex-col items-start gap-y-0.5 px-5 text-lg sm:px-12 sm:text-xl">
                 <button onClick={randomColorPalette}>random</button>
                 <button onClick={brightColorPalette}>bright</button>
                 <button onClick={lightColorPalette}>light</button>
