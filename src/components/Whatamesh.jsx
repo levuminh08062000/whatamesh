@@ -49,14 +49,6 @@ export default function () {
   const isNotDefaultColorPalette =
     JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
 
-  function handleRandomModeOn() {
-    ref4.current = setInterval(() => randomColorPalette(), 1e3);
-  }
-
-  function handleRandomModeOff() {
-    clearInterval(ref4.current);
-  }
-
   function handleRefreshGradient() {
     ref1.current.initGradient(`#${idCanvas}`);
     setToggle1(true); // ??
@@ -75,6 +67,14 @@ export default function () {
   function resetColorPalette() {
     setState(defaultColorPalette);
     handleRefreshGradient();
+  }
+
+  function handleRandomColorModeOn() {
+    ref4.current = setInterval(() => randomColorPalette(), 1e3);
+  }
+
+  function handleRandomColorModeOff() {
+    clearInterval(ref4.current);
   }
 
   // https://github.com/davidmerfield/randomColor#options
@@ -128,9 +128,9 @@ export default function () {
   }, [toggle1]);
 
   useEffect(() => {
-    toggle4 ? handleRandomModeOn() : undefined;
+    toggle4 ? handleRandomColorModeOn() : undefined;
 
-    return () => handleRandomModeOff();
+    return () => handleRandomColorModeOff();
   }, [toggle4]);
 
   return (
@@ -185,7 +185,7 @@ export default function () {
                 >
                   {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
                 </button>
-                <button onClick={setToggle4} title="toggle random mode">
+                <button onClick={setToggle4} title="toggle random color mode">
                   {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
                 </button>
                 {isNotDefaultColorPalette && !toggle4 ? (
