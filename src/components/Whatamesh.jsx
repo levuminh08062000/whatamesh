@@ -49,11 +49,11 @@ export default function () {
   const isNotDefaultColorPalette =
     JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
 
-  function handleRef4SetInterval() {
+  function handleRandomModeOn() {
     ref4.current = setInterval(() => randomColorPalette(), 1e3);
   }
 
-  function handleRef4ClearInterval() {
+  function handleRandomModeOff() {
     clearInterval(ref4.current);
   }
 
@@ -128,9 +128,9 @@ export default function () {
   }, [toggle1]);
 
   useEffect(() => {
-    toggle4 ? handleRef4SetInterval() : undefined;
+    toggle4 ? handleRandomModeOn() : undefined;
 
-    return () => handleRef4ClearInterval();
+    return () => handleRandomModeOff();
   }, [toggle4]);
 
   return (
