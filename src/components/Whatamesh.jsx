@@ -116,7 +116,7 @@ export default function () {
 
         darkenTop: function () {
           setToggle3();
-          this.refresh();
+          Fn.gradient.handle.refresh();
         },
       },
     },
@@ -205,7 +205,7 @@ export default function () {
                   {!toggle2 ? <TbMaximize /> : <TbMaximizeOff />}
                 </button>
                 <button
-                  onClick={() => Fn.gradient.handle.darkenTop()}
+                  onClick={Fn.gradient.handle.darkenTop}
                   title="toggle darken top"
                 >
                   {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
