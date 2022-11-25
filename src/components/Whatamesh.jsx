@@ -133,8 +133,8 @@ export default function () {
 
   useEffect(() => {
     // console.log(ref1.current);
-    ref1.current.amp = new Date().getSeconds() % 2 === 0 ? 3e2 : 4e2;
-    ref1.current.seed = new Date().getSeconds();
+    ref1.current.amp = new Date().getSeconds() % 2 === 0 ? 2e2 : 3e2;
+    ref1.current.seed = new Date().getMilliseconds();
     Fn.gradient.handle.refresh();
   }, []);
 

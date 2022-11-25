@@ -12,7 +12,7 @@
 
 ## Bugs
 
-- [ ] [unknown](/src/components/Whatamesh.jsx#L209)
+- [ ] [unknown](/src/components/Whatamesh.jsx#L240)
 
 ## Tree files
 
