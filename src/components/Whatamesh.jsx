@@ -49,6 +49,7 @@ export default function () {
     colorPalette: {
       handle: {
         set: function (parameter) {
+          // https://github.com/jordienr/whatamesh/blob/c4dda98a1f72091817bbbb0c317e84e6bfce9a1d/src/components/editor.vue#L107
           setState(randomColor({ ...parameter, count: 4 }));
           Fn.gradient.handle.refresh();
         },
