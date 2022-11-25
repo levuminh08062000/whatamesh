@@ -179,7 +179,7 @@ export default function () {
         data-transition-in=""
       ></canvas>
       <Transition
-        show={true}
+        show={!isIdle}
         enter="transition-opacity duration-75"
         enterFrom="opacity-0"
         enterTo="opacity-100"
