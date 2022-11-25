@@ -70,12 +70,25 @@ export default function () {
         mode: {
           random: {
             on: function () {
-              ref4.current = setInterval(() => randomColorPalette(), 1e3);
+              ref4.current = setInterval(
+                () => Fn.colorPalette.handle.color.random(),
+                1e3
+              );
             },
 
             off: function () {
               clearInterval(ref4.current);
             },
+          },
+        },
+
+        // https://github.com/davidmerfield/randomColor#options
+        color: {
+          random: function () {
+            Fn.colorPalette.handle.set({
+              luminosity: "random",
+              hue: "random",
+            });
           },
         },
       },
@@ -95,14 +108,6 @@ export default function () {
       },
     },
   };
-
-  // https://github.com/davidmerfield/randomColor#options
-  function randomColorPalette() {
-    Fn.colorPalette.handle.set({
-      luminosity: "random",
-      hue: "random",
-    });
-  }
 
   function brightColorPalette() {
     Fn.colorPalette.handle.set({ luminosity: "bright" });
@@ -134,7 +139,9 @@ export default function () {
 
   useEffect(() => {
     // ??
-    ref3.current !== mouseWheel && !toggle4 ? randomColorPalette() : undefined;
+    ref3.current !== mouseWheel && !toggle4
+      ? Fn.colorPalette.handle.color.random()
+      : undefined;
     ref3.current = mouseWheel;
   }, [mouseWheel]);
 
@@ -214,7 +221,9 @@ export default function () {
             </div>
             {!toggle4 ? (
               <div className="flex flex-col items-start gap-y-0.5 px-5 text-lg sm:px-12 sm:text-xl">
-                <button onClick={randomColorPalette}>random</button>
+                <button onClick={Fn.colorPalette.handle.color.random}>
+                  random
+                </button>
                 <button onClick={brightColorPalette}>bright</button>
                 <button onClick={lightColorPalette}>light</button>
                 <button onClick={darkColorPalette}>dark</button>
