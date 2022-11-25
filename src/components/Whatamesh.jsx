@@ -59,6 +59,11 @@ export default function () {
           setState(randomColor({ ...parameter, count: 4 }));
           Fn.gradient.handle.refresh();
         },
+
+        reset: function () {
+          setState(defaultColorPalette);
+          Fn.gradient.handle.refresh();
+        },
       },
     },
 
@@ -76,11 +81,6 @@ export default function () {
       },
     },
   };
-
-  function resetColorPalette() {
-    setState(defaultColorPalette);
-    Fn.gradient.handle.refresh();
-  }
 
   function handleRandomColorModeOn() {
     ref4.current = setInterval(() => randomColorPalette(), 1e3);
@@ -200,7 +200,7 @@ export default function () {
                   {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
                 </button>
                 {Fn.colorPalette.boolean.isNotDefault() && !toggle4 ? (
-                  <button onClick={resetColorPalette} title="reset">
+                  <button onClick={Fn.colorPalette.handle.reset} title="reset">
                     <VscDebugStepBack />
                   </button>
                 ) : undefined}
