@@ -45,9 +45,18 @@ export default function () {
 
   const [toggle4, setToggle4] = useToggle(false);
 
-  // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
-  const isNotDefaultColorPalette =
-    JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
+  const Fn = {
+    colorPalette: {
+      // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+      isNotDefault: function () {
+        return JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
+      },
+    },
+  };
+
+  useEffect(() => {
+    // console.log(Fn);
+  }, []);
 
   function handleRefreshGradient() {
     ref1.current.initGradient(`#${idCanvas}`);
@@ -186,7 +195,7 @@ export default function () {
                 <button onClick={setToggle4} title="toggle random color mode">
                   {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
                 </button>
-                {isNotDefaultColorPalette && !toggle4 ? (
+                {Fn.colorPalette.isNotDefault() && !toggle4 ? (
                   <button onClick={resetColorPalette} title="reset">
                     <VscDebugStepBack />
                   </button>
