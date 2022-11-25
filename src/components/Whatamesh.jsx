@@ -67,6 +67,28 @@ export default function () {
           },
         },
 
+        // https://github.com/davidmerfield/randomColor#options
+        color: {
+          random: function () {
+            Fn.colorPalette.handle.set({
+              luminosity: "random",
+              hue: "random",
+            });
+          },
+
+          bright: function () {
+            Fn.colorPalette.handle.set({ luminosity: "bright" });
+          },
+
+          light: function () {
+            Fn.colorPalette.handle.set({ luminosity: "light" });
+          },
+
+          dark: function () {
+            Fn.colorPalette.handle.set({ luminosity: "dark" });
+          },
+        },
+
         mode: {
           random: {
             on: function () {
@@ -79,16 +101,6 @@ export default function () {
             off: function () {
               clearInterval(ref4.current);
             },
-          },
-        },
-
-        // https://github.com/davidmerfield/randomColor#options
-        color: {
-          random: function () {
-            Fn.colorPalette.handle.set({
-              luminosity: "random",
-              hue: "random",
-            });
           },
         },
       },
@@ -108,18 +120,6 @@ export default function () {
       },
     },
   };
-
-  function brightColorPalette() {
-    Fn.colorPalette.handle.set({ luminosity: "bright" });
-  }
-
-  function lightColorPalette() {
-    Fn.colorPalette.handle.set({ luminosity: "light" });
-  }
-
-  function darkColorPalette() {
-    Fn.colorPalette.handle.set({ luminosity: "dark" });
-  }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
   // useKey("p", callbackFn);
@@ -224,9 +224,15 @@ export default function () {
                 <button onClick={Fn.colorPalette.handle.color.random}>
                   random
                 </button>
-                <button onClick={brightColorPalette}>bright</button>
-                <button onClick={lightColorPalette}>light</button>
-                <button onClick={darkColorPalette}>dark</button>
+                <button onClick={Fn.colorPalette.handle.color.bright}>
+                  bright
+                </button>
+                <button onClick={Fn.colorPalette.handle.color.light}>
+                  light
+                </button>
+                <button onClick={Fn.colorPalette.handle.color.dark}>
+                  dark
+                </button>
               </div>
             ) : undefined}
           </div>
