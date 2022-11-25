@@ -47,13 +47,6 @@ export default function () {
 
   const Fn = {
     colorPalette: {
-      boolean: {
-        // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
-        isNotDefault: function () {
-          return JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
-        },
-      },
-
       handle: {
         set: function (parameter) {
           setState(randomColor({ ...parameter, count: 4 }));
@@ -63,6 +56,15 @@ export default function () {
         reset: function () {
           setState(defaultColorPalette);
           Fn.gradient.handle.refresh();
+        },
+
+        boolean: {
+          // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+          isNotDefault: function () {
+            return (
+              JSON.stringify(state) !== JSON.stringify(defaultColorPalette)
+            );
+          },
         },
 
         mode: {
@@ -203,7 +205,7 @@ export default function () {
                 <button onClick={setToggle4} title="toggle random color mode">
                   {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
                 </button>
-                {Fn.colorPalette.boolean.isNotDefault() && !toggle4 ? (
+                {Fn.colorPalette.handle.boolean.isNotDefault() && !toggle4 ? (
                   <button onClick={Fn.colorPalette.handle.reset} title="reset">
                     <VscDebugStepBack />
                   </button>
