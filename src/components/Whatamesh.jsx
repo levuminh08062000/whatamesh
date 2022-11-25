@@ -52,30 +52,30 @@ export default function () {
         return JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
       },
     },
+
+    gradient: {
+      handle: {
+        refresh: function () {
+          ref1.current.initGradient(`#${idCanvas}`);
+          setToggle1(true); // ??
+        },
+      },
+    },
   };
-
-  useEffect(() => {
-    // console.log(Fn);
-  }, []);
-
-  function handleRefreshGradient() {
-    ref1.current.initGradient(`#${idCanvas}`);
-    setToggle1(true); // ??
-  }
 
   function handleDarkenTopGradient() {
     setToggle3();
-    handleRefreshGradient();
+    Fn.gradient.handle.refresh();
   }
 
   function setColorPalette(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
-    handleRefreshGradient();
+    Fn.gradient.handle.refresh();
   }
 
   function resetColorPalette() {
     setState(defaultColorPalette);
-    handleRefreshGradient();
+    Fn.gradient.handle.refresh();
   }
 
   function handleRandomColorModeOn() {
@@ -119,7 +119,7 @@ export default function () {
     // console.log(ref1.current);
     ref1.current.amp = new Date().getSeconds() % 2 === 0 ? 3e2 : 4e2;
     ref1.current.seed = new Date().getSeconds();
-    handleRefreshGradient();
+    Fn.gradient.handle.refresh();
   }, []);
 
   useEffect(() => {
