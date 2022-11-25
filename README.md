@@ -12,7 +12,7 @@
 
 ## Bugs
 
-- [x] Responsive layout `Footer(GitHub icon)`
+- [ ] Responsive layout `Footer(GitHub icon)`
 
 ## Tree files
 
