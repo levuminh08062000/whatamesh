@@ -53,6 +53,13 @@ export default function () {
           return JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
         },
       },
+
+      handle: {
+        set: function (parameter) {
+          setState(randomColor({ ...parameter, count: 4 }));
+          Fn.gradient.handle.refresh();
+        },
+      },
     },
 
     gradient: {
@@ -70,11 +77,6 @@ export default function () {
     },
   };
 
-  function setColorPalette(parameter) {
-    setState(randomColor({ ...parameter, count: 4 }));
-    Fn.gradient.handle.refresh();
-  }
-
   function resetColorPalette() {
     setState(defaultColorPalette);
     Fn.gradient.handle.refresh();
@@ -90,22 +92,22 @@ export default function () {
 
   // https://github.com/davidmerfield/randomColor#options
   function randomColorPalette() {
-    setColorPalette({
+    Fn.colorPalette.handle.set({
       luminosity: "random",
       hue: "random",
     });
   }
 
   function brightColorPalette() {
-    setColorPalette({ luminosity: "bright" });
+    Fn.colorPalette.handle.set({ luminosity: "bright" });
   }
 
   function lightColorPalette() {
-    setColorPalette({ luminosity: "light" });
+    Fn.colorPalette.handle.set({ luminosity: "light" });
   }
 
   function darkColorPalette() {
-    setColorPalette({ luminosity: "dark" });
+    Fn.colorPalette.handle.set({ luminosity: "dark" });
   }
 
   // https://developer.mozilla.org/en-US/docs/Web/API/UI_Events/Keyboard_event_key_values
