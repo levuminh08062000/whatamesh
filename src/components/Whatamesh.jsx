@@ -88,6 +88,10 @@ export default function () {
           dark: function () {
             Fn.colorPalette.handle.set({ luminosity: "dark" });
           },
+
+          monochrome: function () {
+            Fn.colorPalette.handle.set({ hue: "monochrome" });
+          },
         },
 
         mode: {
@@ -234,6 +238,9 @@ export default function () {
                   </button>
                   <button onClick={Fn.colorPalette.handle.color.dark}>
                     dark
+                  </button>
+                  <button onClick={Fn.colorPalette.handle.color.monochrome}>
+                    monochrome
                   </button>
                 </div>
               ) : undefined}
