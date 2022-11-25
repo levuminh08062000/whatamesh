@@ -61,14 +61,14 @@ export default function () {
           ref1.current.initGradient(`#${idCanvas}`);
           setToggle1(true); // ??
         },
+
+        darkenTop: function () {
+          setToggle3();
+          Fn.gradient.handle.refresh();
+        },
       },
     },
   };
-
-  function handleDarkenTopGradient() {
-    setToggle3();
-    Fn.gradient.handle.refresh();
-  }
 
   function setColorPalette(parameter) {
     setState(randomColor({ ...parameter, count: 4 }));
@@ -189,7 +189,7 @@ export default function () {
                   {!toggle2 ? <TbMaximize /> : <TbMaximizeOff />}
                 </button>
                 <button
-                  onClick={handleDarkenTopGradient}
+                  onClick={Fn.gradient.handle.darkenTop}
                   title="toggle darken top"
                 >
                   {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
