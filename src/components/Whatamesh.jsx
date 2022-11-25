@@ -179,7 +179,7 @@ export default function () {
         data-transition-in=""
       ></canvas>
       <Transition
-        show={!isIdle}
+        show={true}
         enter="transition-opacity duration-75"
         enterFrom="opacity-0"
         enterTo="opacity-100"
@@ -189,7 +189,7 @@ export default function () {
         className="fixed"
       >
         <div className="fex-col flex h-screen w-screen p-7 md:p-10">
-          <div className="flex flex-col gap-y-1.5">
+          <div className="flex w-full flex-col gap-y-1.5">
             <div className="flex flex-row items-baseline gap-x-0.5">
               <h1 className="text-5xl sm:first-letter:text-8xl">{idCanvas}</h1>
               <div className="flex flex-row items-baseline text-sm sm:text-sm">
@@ -220,27 +220,32 @@ export default function () {
                 ) : undefined}
               </div>
             </div>
-            {!toggle4 ? (
-              <div className="flex flex-col items-start gap-y-0.5 px-5 text-lg sm:px-12 sm:text-xl">
-                <button onClick={Fn.colorPalette.handle.color.random}>
-                  random
-                </button>
-                <button onClick={Fn.colorPalette.handle.color.bright}>
-                  bright
-                </button>
-                <button onClick={Fn.colorPalette.handle.color.light}>
-                  light
-                </button>
-                <button onClick={Fn.colorPalette.handle.color.dark}>
-                  dark
-                </button>
+            <div className="flex h-full flex-col px-5 sm:px-12">
+              {!toggle4 ? (
+                <div className="flex flex-col items-start gap-y-0.5 text-lg sm:text-xl">
+                  <button onClick={Fn.colorPalette.handle.color.random}>
+                    random
+                  </button>
+                  <button onClick={Fn.colorPalette.handle.color.bright}>
+                    bright
+                  </button>
+                  <button onClick={Fn.colorPalette.handle.color.light}>
+                    light
+                  </button>
+                  <button onClick={Fn.colorPalette.handle.color.dark}>
+                    dark
+                  </button>
+                </div>
+              ) : undefined}
+              <div className="flex grow flex-col items-end justify-end text-xl sm:text-2xl">
+                <a
+                  href="https://github.com/shenlong616/whatamesh"
+                  target="_blank"
+                >
+                  <GoMarkGithub />
+                </a>
               </div>
-            ) : undefined}
-          </div>
-          <div className="flex w-full flex-row justify-end self-end text-xl sm:text-2xl">
-            <a href="https://github.com/shenlong616/whatamesh" target="_blank">
-              <GoMarkGithub />
-            </a>
+            </div>
           </div>
         </div>
       </Transition>
