@@ -47,9 +47,11 @@ export default function () {
 
   const Fn = {
     colorPalette: {
-      // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
-      isNotDefault: function () {
-        return JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
+      is: {
+        // https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
+        notDefault: function () {
+          return JSON.stringify(state) !== JSON.stringify(defaultColorPalette);
+        },
       },
     },
 
@@ -195,7 +197,7 @@ export default function () {
                 <button onClick={setToggle4} title="toggle random color mode">
                   {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
                 </button>
-                {Fn.colorPalette.isNotDefault() && !toggle4 ? (
+                {Fn.colorPalette.is.notDefault() && !toggle4 ? (
                   <button onClick={resetColorPalette} title="reset">
                     <VscDebugStepBack />
                   </button>
