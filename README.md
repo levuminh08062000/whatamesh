@@ -8,11 +8,11 @@
 
 - [ ] Add more options [`ref1.current`](src/components/Whatamesh.jsx#L26)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
-- [x] Keyboard shortcut
+- [ ] Keyboard shortcut
 
 ## Bugs
 
-- [ ] [unknown](/src/components/Whatamesh.jsx#L240)
+- [x] Responsive layout `Footer(GitHub icon)`
 
 ## Tree files
 
