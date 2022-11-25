@@ -64,6 +64,18 @@ export default function () {
           setState(defaultColorPalette);
           Fn.gradient.handle.refresh();
         },
+
+        mode: {
+          random: {
+            on: function () {
+              ref4.current = setInterval(() => randomColorPalette(), 1e3);
+            },
+
+            off: function () {
+              clearInterval(ref4.current);
+            },
+          },
+        },
       },
     },
 
@@ -81,14 +93,6 @@ export default function () {
       },
     },
   };
-
-  function handleRandomColorModeOn() {
-    ref4.current = setInterval(() => randomColorPalette(), 1e3);
-  }
-
-  function handleRandomColorModeOff() {
-    clearInterval(ref4.current);
-  }
 
   // https://github.com/davidmerfield/randomColor#options
   function randomColorPalette() {
@@ -139,9 +143,9 @@ export default function () {
   }, [toggle1]);
 
   useEffect(() => {
-    toggle4 ? handleRandomColorModeOn() : undefined;
+    toggle4 ? Fn.colorPalette.handle.mode.random.on() : undefined;
 
-    return () => handleRandomColorModeOff();
+    return () => Fn.colorPalette.handle.mode.random.off();
   }, [toggle4]);
 
   return (
