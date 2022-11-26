@@ -10,7 +10,6 @@ import {
   useLockBodyScroll,
   useMouseWheel,
 } from "react-use";
-import { Transition } from "@headlessui/react";
 import { IoPause, IoPlay } from "react-icons/io5";
 import { GoMarkGithub } from "react-icons/go";
 import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
