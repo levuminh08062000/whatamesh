@@ -182,80 +182,78 @@ export default function () {
         data-js-darken-top={toggle3 ? "" : false}
         data-transition-in=""
       ></canvas>
-      <Transition
-        show={!isIdle}
-        enter="transition-opacity duration-75"
-        enterFrom="opacity-0"
-        enterTo="opacity-100"
-        leave="transition-opacity duration-75"
-        leaveFrom="opacity-100"
-        leaveTo="opacity-0"
-        className="fixed"
-      >
-        <div className="fex-col flex h-screen w-screen p-7 md:p-10">
-          <div className="flex w-full flex-col gap-y-1.5">
-            <div className="flex flex-row items-baseline gap-x-0.5">
-              <h1 className="text-5xl sm:first-letter:text-8xl">{idCanvas}</h1>
-              <div className="flex flex-row items-baseline text-sm sm:text-sm">
-                {!toggle4 ? (
+      {!isIdle ? (
+        <div className="fixed">
+          <div className="fex-col flex h-screen w-screen p-7 md:p-10">
+            <div className="flex w-full flex-col gap-y-1.5">
+              <div className="flex flex-row items-baseline gap-x-0.5">
+                <h1 className="text-5xl sm:first-letter:text-8xl">
+                  {idCanvas}
+                </h1>
+                <div className="flex flex-row items-baseline text-sm sm:text-sm">
+                  {!toggle4 ? (
+                    <button
+                      onClick={setToggle1}
+                      title={!toggle1 ? "play" : "pause"}
+                    >
+                      {!toggle1 ? <IoPlay /> : <IoPause />}
+                    </button>
+                  ) : undefined}
+                  <button onClick={setToggle2} title="toggle fullscreen">
+                    {!toggle2 ? <TbMaximize /> : <TbMaximizeOff />}
+                  </button>
                   <button
-                    onClick={setToggle1}
-                    title={!toggle1 ? "play" : "pause"}
+                    onClick={Fn.gradient.handle.darkenTop}
+                    title="toggle darken top"
                   >
-                    {!toggle1 ? <IoPlay /> : <IoPause />}
+                    {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
                   </button>
-                ) : undefined}
-                <button onClick={setToggle2} title="toggle fullscreen">
-                  {!toggle2 ? <TbMaximize /> : <TbMaximizeOff />}
-                </button>
-                <button
-                  onClick={Fn.gradient.handle.darkenTop}
-                  title="toggle darken top"
-                >
-                  {toggle3 ? <MdDarkMode /> : <MdOutlineDarkMode />}
-                </button>
-                <button onClick={setToggle4} title="toggle random color mode">
-                  {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
-                </button>
-                {Fn.colorPalette.handle.boolean.isNotDefault() && !toggle4 ? (
-                  <button onClick={Fn.colorPalette.handle.reset} title="reset">
-                    <VscDebugStepBack />
+                  <button onClick={setToggle4} title="toggle random color mode">
+                    {!toggle4 ? <HiOutlineCheckCircle /> : <HiCheckCircle />}
                   </button>
-                ) : undefined}
-              </div>
-            </div>
-            <div className="flex h-full flex-col px-5 sm:px-12">
-              {!toggle4 ? (
-                <div className="flex flex-col items-start gap-y-0.5 text-lg sm:text-xl">
-                  <button onClick={Fn.colorPalette.handle.color.random}>
-                    random
-                  </button>
-                  <button onClick={Fn.colorPalette.handle.color.bright}>
-                    bright
-                  </button>
-                  <button onClick={Fn.colorPalette.handle.color.light}>
-                    light
-                  </button>
-                  <button onClick={Fn.colorPalette.handle.color.dark}>
-                    dark
-                  </button>
-                  <button onClick={Fn.colorPalette.handle.color.monochrome}>
-                    monochrome
-                  </button>
+                  {Fn.colorPalette.handle.boolean.isNotDefault() && !toggle4 ? (
+                    <button
+                      onClick={Fn.colorPalette.handle.reset}
+                      title="reset"
+                    >
+                      <VscDebugStepBack />
+                    </button>
+                  ) : undefined}
                 </div>
-              ) : undefined}
-              <div className="flex grow flex-col items-end justify-end text-xl sm:text-2xl">
-                <a
-                  href="https://github.com/shenlong616/whatamesh"
-                  target="_blank"
-                >
-                  <GoMarkGithub />
-                </a>
+              </div>
+              <div className="flex h-full flex-col px-5 sm:px-12">
+                {!toggle4 ? (
+                  <div className="flex flex-col items-start gap-y-0.5 text-lg sm:text-xl">
+                    <button onClick={Fn.colorPalette.handle.color.random}>
+                      random
+                    </button>
+                    <button onClick={Fn.colorPalette.handle.color.bright}>
+                      bright
+                    </button>
+                    <button onClick={Fn.colorPalette.handle.color.light}>
+                      light
+                    </button>
+                    <button onClick={Fn.colorPalette.handle.color.dark}>
+                      dark
+                    </button>
+                    <button onClick={Fn.colorPalette.handle.color.monochrome}>
+                      monochrome
+                    </button>
+                  </div>
+                ) : undefined}
+                <div className="flex grow flex-col items-end justify-end text-xl sm:text-2xl">
+                  <a
+                    href="https://github.com/shenlong616/whatamesh"
+                    target="_blank"
+                  >
+                    <GoMarkGithub />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </Transition>
+      ) : undefined}
     </div>
   );
 }
