@@ -16,6 +16,7 @@ import { TbMaximizeOff, TbMaximize } from "react-icons/tb";
 import { MdOutlineDarkMode, MdDarkMode } from "react-icons/md";
 import { VscDebugStepBack } from "react-icons/vsc";
 import { HiOutlineCheckCircle, HiCheckCircle } from "react-icons/hi";
+import noiseGif from "./noise.gif";
 
 export default function () {
   const idCanvas = "Whatamesh";
@@ -168,6 +169,13 @@ export default function () {
       })}
       ref={ref2}
     >
+      <div
+        // https://webflow.com/made-in-webflow/website/sinkcolabs-cd9391191d7ce4-4e17312dcf483
+        className="pointer-events-none fixed inset-0 z-50 h-screen w-screen overflow-hidden bg-auto bg-center opacity-[.03]"
+        style={{
+          backgroundImage: `url("${noiseGif}")`,
+        }}
+      ></div>
       <canvas
         id={idCanvas}
         style={{
