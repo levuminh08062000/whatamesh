@@ -9,6 +9,7 @@
 - [ ] Add more options [`ref1.current`](src/components/Whatamesh.jsx#L26)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 - [ ] Keyboard shortcut
+- [ ] Screenshot function 🤡
 
 ## Bugs
 
