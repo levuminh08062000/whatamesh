@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-![](./README/images/screenshots/0.png)
+![](./README/images/screenshots/1.png)
 
 ## To do
 
@@ -20,11 +20,13 @@
 📂README
  ┗ 📂images
  ┃ ┗ 📂screenshots
- ┃ ┃ ┗ 0.png
+ ┃ ┃ ┗ 1.png
 
- 📂src
+📂src
  ┣ 📂components
- ┃ ┗ Whatamesh.jsx
+ ┃ ┗ 📂Whatamesh
+ ┃ ┃ ┣ index.jsx
+ ┃ ┃ ┗ noise.gif
  ┣ 📂library
  ┃ ┗ Gradient.js
  ┣ App.jsx
