@@ -9,7 +9,8 @@
 - [ ] Add more options [`ref1.current`](src/components/Whatamesh.jsx#L26)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 - [ ] Keyboard shortcut
-- [ ] Screenshot function 🤡
+- [ ] Screenshot function [`html2canvas`](https://html2canvas.hertzen.com/) 🤡
+- [ ] Use `@next/font` instead of `tailwindcss`
 
 ## Bugs
 
