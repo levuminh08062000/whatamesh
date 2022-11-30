@@ -192,9 +192,9 @@ export default function () {
       {!isIdle ? (
         <div className="fixed">
           <div className="fex-col flex h-screen w-screen p-7 md:p-10">
-            <div className="flex w-full flex-col gap-y-1.5">
+            <div className="flex w-full flex-col gap-y-3">
               <div className="flex flex-row items-baseline gap-x-0.5">
-                <h1 className="text-5xl sm:first-letter:text-8xl">
+                <h1 className="text-4xl sm:first-letter:text-8xl">
                   {idCanvas}
                 </h1>
                 <div className="flex flex-row items-baseline text-sm sm:text-sm">
@@ -230,7 +230,7 @@ export default function () {
               </div>
               <div className="flex h-full flex-col px-5 sm:px-12">
                 {!toggle4 ? (
-                  <div className="flex flex-col items-start gap-y-0.5 text-lg sm:text-xl">
+                  <div className="flex flex-col items-start gap-y-0.5 text-base sm:text-lg">
                     <button onClick={Fn.colorPalette.handle.color.random}>
                       random
                     </button>

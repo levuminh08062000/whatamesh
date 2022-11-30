@@ -4,11 +4,11 @@
 
 @layer base {
   * {
-    @apply select-none;
+    @apply select-none font-Poppins;
   }
 
   h1 {
-    @apply font-serif text-slate-50;
+    @apply font-playfairDisplay text-slate-50;
   }
 
   a,
