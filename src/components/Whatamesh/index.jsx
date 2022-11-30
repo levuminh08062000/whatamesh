@@ -99,7 +99,7 @@ export default function () {
             on: function () {
               ref4.current = setInterval(
                 () => Fn.colorPalette.handle.color.random(),
-                1e3
+                3e3
               );
             },
 
