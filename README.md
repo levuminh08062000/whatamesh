@@ -29,12 +29,15 @@
  ┃ ┗ 📂Whatamesh
  ┃ ┃ ┣ index.jsx
  ┃ ┃ ┗ noise.gif
+ ┣ 📂css
+ ┃ ┣ index.scss
+ ┃ ┣ _google-font.scss
+ ┃ ┗ _tailwindcss.scss
  ┣ 📂library
  ┃ ┗ Gradient.js
  ┣ App.jsx
  ┣ App.scss
- ┣ main.jsx
- ┗ _tailwindcss.scss
+ ┗ main.jsx
 ```
 
 ## Development
