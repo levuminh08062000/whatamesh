@@ -6,7 +6,7 @@
 
 ## To do
 
-- [ ] Add more options [`ref1.current`](src/components/Whatamesh.jsx#L26)
+- [ ] Add more options [`ref1.current`](src/components/Whatamesh/index.jsx#L26)
 - [ ] [`Code splitting`](https://reactjs.org/docs/code-splitting.html)
 - [ ] Keyboard shortcut
 - [ ] Screenshot function [`html2canvas`](https://html2canvas.hertzen.com/)
